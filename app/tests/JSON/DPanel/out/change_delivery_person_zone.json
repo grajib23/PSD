@@ -1,0 +1,20 @@
+{
+  "data":{
+       "deliveryPersonId": "33",
+       "deliveryPersonName": "Abdur Rohim",
+       "defaultZoneId": "1",
+       "defaultZoneName": "Banani",
+        "coverableZone":[
+        {
+          "zoneId":1,
+          "zoneName":"Mohakhali"
+        },
+        {
+          "zoneId":2,
+           "zoneName":"Mohakhali DOHS 1207"
+        }
+     ]
+  },
+  "messageText":"Change Delivery Person Zone",
+  "serviceUser":"WebApp"
+}

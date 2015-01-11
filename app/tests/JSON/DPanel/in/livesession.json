@@ -1,0 +1,101 @@
+{  
+    "orders":[  
+        {  
+            "details":{  
+                "orderId":"O67892",
+                "customerName":"Ratul Ahmed",
+                "customerAddress":"Dhaka, Mainka chipa, Chekra potti, 32 no, bosti",
+                "customerPhone":"01756170159",
+                "orderAssignType":"Semi Auto",
+                "remainTime":"-70724",
+                "ServerTime":"2014-11-03 05:27:17",
+                "endTime":"2014-09-15 02:43:00",
+                "restaurantName":"SUB FACTORY",
+                "restaurantAddress":"Bonani 11, House 9\/a, ground floore.",
+                "restaurantPhone":"+8801675843137",
+                "orderCurrentStatus":"orderFoodDeliveredByDeliveryPerson",
+                "dmanId":"33",
+                "dmanName":"Abdur Rohim",
+                "dmanBattery":"100%",
+                "dmanGpsStatus":"0",
+                "dmanDeviceTime":"2014-11-02 21:05:31",
+                "dmanLocation":"a:2:{s:9:\"longitude\";s:3:\"0.0\";s:8:\"latitude\";s:3:\"0.0\";}",
+                "dmanStatus":"1",
+                "restaurantUserId":"32",
+                "restaurantUserName":"resUser",
+                "restaurantUserDeviceTime":"19:02:12",
+                "restaurantUserStatus":"0"
+            },
+            "status":[  
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":"FoodPickedUp"
+                },
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":null
+                },
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":"FoodPickedUp"
+                }
+            ]
+        },
+        {  
+            "details":{  
+                "orderId":"O67893",
+                "customerName":"Ratul Ahmed",
+                "customerAddress":"Dhaka, Mainka chipa, Chekra potti, 32 no, bosti",
+                "customerPhone":"01756170159",
+                "orderAssignType":"Auto 420",
+                "remainTime":"-15147",
+                "ServerTime":"2014-11-03 05:27:17",
+                "endTime":"2014-10-23 17:00:00",
+                "restaurantName":"SUB FACTORY",
+                "restaurantAddress":"Bonani 11, House 9\/a, ground floore.",
+                "restaurantPhone":"+8801675843137",
+                "orderCurrentStatus":"orderFoodDeliveredByDeliveryPerson",
+                "dmanId":"33",
+                "dmanName":"Abdur Rohim",
+                "dmanBattery":"100%",
+                "dmanGpsStatus":"0",
+                "dmanDeviceTime":"2014-11-02 21:05:31",
+                "dmanLocation":"a:2:{s:9:\"longitude\";s:3:\"0.0\";s:8:\"latitude\";s:3:\"0.0\";}",
+                "dmanStatus":"1",
+                "restaurantUserId":"32",
+                "restaurantUserName":"resUser",
+                "restaurantUserDeviceTime":"19:02:12",
+                "restaurantUserStatus":"0"
+            },
+            "status":[  
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":null
+                },
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":null
+                },
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":null
+                },
+                {  
+                    "userType":"DeliveryPerson",
+                    "status":"FoodDelivered"
+                }
+            ]
+        }
+    ]
+}
+
+#1November 3rd 2014, 5:23:27 am
+VALID
+Formatted JSON Data
+{  
+    "orders":[  
+        {  
+            "details":{  
+                "orderId":"O67892",
+                "customerName":"Ratul Ahmed",
+                "customerAddress"

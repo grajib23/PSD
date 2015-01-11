@@ -1,0 +1,36 @@
+{
+  "momentTimestamp": "16-06-2014 18:04:50",
+  "messageName": "Problem List",
+  "source": "168.192.0.1",
+  "destination": "168.192.0.4",
+  "data": {
+    "device": {
+      "deviceId": "D2234",
+      "deviceSignature": "66743f19E959-489fB053-27ba4c61ff25",
+      "deviceFor": "Abdur Rohim",
+      "status": "online",
+      "gpsStatus": 0,
+      "gcmRegistrationId" : "66743f19E959-489fB053-27ba4c61ff25",
+      "dataUpDown":{
+         "dataUpload": "30mb",
+         "dataDownload": "40mb"
+       },
+      "location": {
+        "latitude": 22.23422234234,
+        "longitude": 45.2342323222
+      },
+      "battery": "90%",
+      "networkStrength": "120db",
+      "totalApp": 200,
+      "currentDeviceTime": "19:02:12"
+    },
+    "currentAddress":"New Mohakhali DOHS 22 no Road",
+    "currentActivity":"Walking",
+    "service":"ProblemListForDeliveryPerson",
+    "apiToken":"8a0d7115779c09b1a87210251ec90d48d3dcf6b701a47bc2e71dc582aaa8f553",
+    "userId":33
+
+  },
+  "serviceUser":"deliveryNativeApp",
+  "serviceUserKey":"SG7236SK"
+}

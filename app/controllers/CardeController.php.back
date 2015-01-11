@@ -1,0 +1,101 @@
+<?php
+
+class CardeController extends \BaseController {
+
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+		$result = CardreModel::select('id','cardre_title')->where('is_active',1)->get();
+		$response = new stdClass;
+		$response->cardre_types = $result;
+		return json_encode($response);
+	}
+
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		//
+	}
+
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		$result = Input::all();
+		$json = json_decode($result['data'],128) ;
+		$data = $json['cadres_types'] ;
+		$carde_model = new CardreModel ;
+		$carde_model->cardre_title = trim($data['cardre_title']);
+		$carde_model->is_active = trim($data['is_active']);
+		
+		if($carde_model->save()){
+			echo "saved";
+		}
+		else{
+			echo "Not saved";
+		}
+	}
+
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		//
+	}
+
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		//
+	}
+
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		//
+	}
+
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		//
+	}
+
+
+}

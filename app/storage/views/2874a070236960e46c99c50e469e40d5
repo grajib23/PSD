@@ -1,0 +1,183 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<div class="page-title">	
+		<h3>Device Monitor</h3>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Monitor <span class="semi-bold">All Devices</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<form id="save_device_form" action="#" method="POST" novalidate="novalidate">
+				  
+					  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						  
+							
+							
+							<table id="deviceTable" class="table bigDatatable table-hover table-condensed dataTable">
+								
+								<thead>
+									<tr>
+										<td>Device ID</td>
+										<td>Device Status</td>
+										<td>Assigned to</td>
+										<td>Information</td>
+										<td>Location</td>
+										<td>Action</td>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>65876909</td>
+										<td>
+											<div class="dataGroup d_stat">
+												<span class="label">Server</span>
+												<span class="value red"><i class="fa fa-circle"></i></span>
+											</div>
+											<div class="dataGroup d_stat">
+												<span class="label">Enabled</span>
+												<span class="value green"><i class="fa fa-circle"></i></span>
+											</div>
+										</td>
+										<td>Narayan Chakma</td>
+										<td>
+											<div class="dataGroup">
+												<span class="label">Battery</span>
+												<span class="value">70%</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">GPS</span>
+												<span class="value green">
+													<i class="fa fa-circle"></i>
+												</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Data UP/Down</span>
+												<span class="value">30mb-50mb</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Network Strength</span>
+												<span class="value">67db</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Total app</span>
+												<span class="value">4</span>
+											</div>
+										</td>
+										<td>
+											<div class="dataGroup">
+												<span class="label">Location</span>
+												<span class="value geo">Lat:29.83498234983</span>
+												<span class="value geo">Lan:34.3273647823</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Area</span>
+												<span class="value">Banani</span>
+											</div>
+										</td>
+										<td>
+											<div class="btn-group btn-demo-space">
+												<button class="btn btn-success btn-demo-space">Action</button>
+												<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+												<ul class="dropdown-menu">
+													<li><a href="#">Reassign</a></li>
+													<li><a href="#">Assign</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Disable</a></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+									
+									
+									<tr>
+										<td>AUSK76909</td>
+										<td>
+											<div class="dataGroup d_stat">
+												<span class="label">Server</span>
+												<span class="value green"><i class="fa fa-circle"></i></span>
+											</div>
+											<div class="dataGroup d_stat">
+												<span class="label">Enabled</span>
+												<span class="value green"><i class="fa fa-circle"></i></span>
+											</div>
+										</td>
+										<td>Niru Chakma</td>
+										<td>
+											<div class="dataGroup">
+												<span class="label">Battery</span>
+												<span class="value">90%</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">GPS</span>
+												<span class="value red">
+													<i class="fa fa-circle"></i>
+												</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Data UP/Down</span>
+												<span class="value">45mb-1000mb</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Network Strength</span>
+												<span class="value">67db</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Total app</span>
+												<span class="value">74</span>
+											</div>
+										</td>
+										<td>
+											<div class="dataGroup">
+												<span class="label">Location</span>
+												<span class="value geo">Lat:29.83498234983</span>
+												<span class="value geo">Lan:34.3273647823</span>
+											</div>
+											<div class="dataGroup">
+												<span class="label">Area</span>
+												<span class="value">Gulshan 1</span>
+											</div>
+										</td>
+										<td>
+											<div class="btn-group btn-demo-space">
+												<button class="btn btn-success btn-demo-space">Action</button>
+												<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+												<ul class="dropdown-menu">
+													<li><a href="#">Reassign</a></li>
+													<li><a href="#">Assign</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Disable</a></li>
+												</ul>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+								
+							</table>
+							
+							
+							
+						 
+						</div>
+					</div>
+				</form>
+				
+				
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

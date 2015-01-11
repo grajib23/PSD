@@ -1,0 +1,10 @@
+{  
+    "messageText":"Status Printer",
+    "serviceUser":"WebApp",
+    "data":{  
+        "printerInfo":{  
+            "id":2,
+            "status":1
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<?php 
+	class AddressModel extends Eloquent{
+		
+		//protected $table = 'users_address';
+		//protected public $timestamps = true;
+
+		public function getAllDistrict(){
+
+			$result = DB::table('district')->select('id','district_name','division_id')
+								->get();
+
+			return $result;
+		}
+		public function getAllAddressList(){
+
+			$result = DB::select('select `divs`.`division_id`, `divs`.`division_name`, `dis`.`id`,`dis`.`district_name`,`up`.`upzilla_id` ,`up`.`upzilla_name` from division as divs INNER join district as dis on dis.division_id = `divs`.`division_id` INNER join upzilla as up on `up`.`district_id` = `dis`.`id` '  );
+
+			return $result;
+		}
+
+
+
+	}
+
+?>

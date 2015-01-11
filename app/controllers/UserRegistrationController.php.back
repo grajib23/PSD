@@ -1,0 +1,125 @@
+<?php
+
+class UserRegistrationController extends \BaseController {
+
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function index()
+	{
+		$usersmodel = UsersModel::where('is_active',1)->get();
+		return json_encode($usersmodel);
+	}
+
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		//
+	}
+
+
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		try{
+		
+			$result=Input::all();
+			//dd($result);
+			//die();
+			$json=json_decode($result['data'],128);
+
+			$userObject=$json['data'];
+
+			$usersmodel = UsersModel::create($userObject);
+			$usersmodel->save();
+
+			return '201';
+			/*return Resonse::json([
+				'data'=>array(
+					  'message'=>'registration successful'
+					)
+			],200);*/
+		}catch(Exception $e){
+			 
+			 var_dump($e);
+		}
+
+	}
+
+
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		$usersmodel = UsersModel::find($id);
+		return json_encode($usersmodel);
+
+	}
+
+
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		//
+	}
+
+
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+
+		$result=Input::all();
+		$json=json_decode($result['data'],128);
+		$userObject=$json['users_update'];
+		$usersmodel = UsersModel::find($id);
+		$usersmodel->user_name = $userObject['user_name'] ;
+		$usersmodel->user_email = $userObject['user_email'] ;
+		$usersmodel->user_phone = $userObject['user_phone'] ;
+		$usersmodel->user_national_id = $userObject['user_national_id'] ;
+		$usersmodel->user_pass = $userObject['user_pass'] ;
+		$usersmodel->is_confirm = $userObject['is_confirm'] ;
+		$usersmodel->is_confirm = $userObject['user_role'];
+		$usersmodel->save();
+		return '201';
+		
+	}
+
+
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+	
+	}
+
+
+}

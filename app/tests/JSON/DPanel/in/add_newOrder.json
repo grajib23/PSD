@@ -1,0 +1,100 @@
+{
+  "momentTimestamp": "16-06-2014 18:04:50",
+  "messageText": "New Order With Details",
+  "source": "192.168.10.0",
+  "destination": "deliveryModule",
+  "data": {
+    "serverStatus": "online",
+    "order":
+      {
+        "orderId": "O67899",
+        "orderStatus": "waitForAction",
+        "status": "active",
+        "restaurantId": "80",
+        "restaurantName": "SUB FACTORY",
+        "restaurantAddress": "Bonani 11, House 9/a, ground floore.",
+        "restaurantPhone": "+8801675843137",
+        "restaurantLocation": {
+          "latitude": 22.23422234234,
+          "longitude": 45.2342323222
+        },
+        "timer": {
+          "type": "pickupTimer",
+          "startTime": "10-11-2014 18:00:11",
+          "endTime": "10-11-2014   18:20:11",
+          "extraTime": 60
+        },
+        "cartItems": [
+          {
+            "id": "1025",
+            "itemUid": "1ae6c81a-338e-445e-9cff-2c35ee49cb41",
+            "name": "Chicken Strips",
+            "image": "http://image.url",
+            "preparationTime": "120",
+            "quantity": 3,
+            "totalPrice": 735,
+            "discount": {
+              "type": "amount",
+              "amount": 100
+            },
+            "itemToppings": [
+              {
+                "id": "316",
+                "name": "Italiano",
+                "price": "0.00"
+              },
+              {
+                "id": "310",
+                "name": "Cucumber",
+                "price": "0.00"
+              }
+            ]
+          },
+          {
+            "id": "1025",
+            "itemUid": "1ae6c81a-338e-445e-9cff-2c35ee49cb41",
+            "name": "Chicken Strips",
+            "image": "http://image.url",
+            "preparationTime": "120",
+            "quantity": 3,
+            "totalPrice": 735,
+            "discount": {
+              "type": "amount",
+              "amount": 100
+            },
+            "itemToppings": [
+              {
+                "id": "316",
+                "name": "Italiano",
+                "price": "0.00"
+              },
+              {
+                "id": "310",
+                "name": "Cucumber",
+                "price": "0.00"
+              }
+            ]
+          }
+        ],
+        "prices": {
+          "subTotal" : "12365.123567",
+          "restaurantServiceCharge" : "123.453",
+          "vat" : "123",
+          "discount" : "32",
+          "total" : "895.25",
+          "cashCollectAmount": "895.25"
+        },
+        "userData": {
+          "userId": "71",
+          "userName": "Rain Walker",
+          "receiverName": "Ratul Ahmed",
+          "receiverPhone": "01756170159",
+          "receiverAddress": "Dhaka, Mainka chipa, Chekra potti, 32 no, bosti",
+          "receiverArea": "Bonani",
+          "receiverAreaId":1
+        }
+      }
+    
+  },
+  "serviceUser":"hungryNaki.com"
+}

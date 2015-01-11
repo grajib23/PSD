@@ -1,0 +1,153 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<?php
+		echo'<pre>'; 
+		$getAllDeviceWithIdData = json_decode($getAllDeviceWithIdJSON,true);
+		$getAllDevice = $getAllDeviceWithIdData["devices"];
+
+		$reassainDeviceData = json_decode($reassainDeviceJSON, true);
+		$reassainDeviceDperson = $reassainDeviceData["deliveryPersons"];
+		
+		print_r($reassainDeviceDperson);
+		//print_r($getAllDevice);
+		//die();
+	   	echo'</pre>';
+	    $apiToken = Session::get('apiToken');
+	    var_dump($apiToken);
+	?>
+	<script>
+		var reassianDevice = <?=$reassainDeviceJSON?>;
+	</script>
+	<div class="page-title">	
+		<h3>Assain And Reassign Device To Delivery Person</h3>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Current Assign <span class="semi-bold">Device</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				
+				  							  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						 								  
+							<form id="change_zone_form" action="#" method="POST" novalidate="novalidate">
+							
+							
+								
+								<div class="form-group">
+									<label class="form-label">Select Delivery Person</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										
+										<select class="init_select2_byHtml" name="deliveryPersonUsername" id="deliveryPersonUsername" style="width:100%">
+											<option value="null">Select Delivery Person Name</option>
+											<?php foreach($reassainDeviceDperson as $dpersonName): ?> 
+												<option value="<?php echo $dpersonName["id"]; ?>"><?php echo $dpersonName["name"]; ?></option>
+											<?php endforeach; ?>	
+										</select>
+										
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label">Select Device</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<select class="init_select2_byHtml" name="selectedDevice" id="selectedDevice"style="width:100%">
+											
+										</select>
+									</div>
+								</div>
+								
+							</form>
+							
+						</div> <!-- col -->
+					</div>
+				
+				
+				
+			</div> <!-- grid body -->
+			
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Reassign <span class="semi-bold">Device</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				
+				  							  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						 								  
+							<form id="change_zone_form" action="#" method="POST" novalidate="novalidate">
+								<input type="hidden" value = "<?php echo $apiToken; ?>" name="apitoken" id="apitoken">
+								<div class="form-group">
+									<label class="form-label">Select Delivery Person</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										
+										<select class="init_select2_byHtml" name="selectPersonUsername" id="selectPersonUsername" style="width:100%">
+											<option value="null">Select Delivery Person Name</option>
+											<?php foreach($reassainDeviceDperson as $dpersonName): ?> 
+												<option value="<?php echo $dpersonName["id"]; ?>*<?php echo $dpersonName["name"]; ?>*<?php echo $dpersonName["deviceId"]; ?>"><?php echo $dpersonName["name"]; ?></option>
+											<?php endforeach; ?>	
+										</select>
+										
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label">Select Device</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<select class="init_select2_byHtml" name="selectedDevicetoAssain" id="selectedDevicetoAssain"style="width:100%">
+											<option value="null">Select Device</option>
+											<?php foreach($getAllDevice as $deviceinfo): ?> 
+												<option value="<?php echo $deviceinfo["deviceId"]; ?>*<?php echo $deviceinfo["deviceName"]; ?>"><?php echo $deviceinfo["model"]; ?></option>
+											<?php endforeach; ?>	
+										</select>
+									</div>
+								</div>
+								
+								<div class="actions clearfix">  
+									<div class="pull-right">
+										<button type="submit" class="btn btn-primary btn-cons" id="assaignDevice"><i class="icon-ok"></i> Assign</button>
+										<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+									</div>
+								</div>
+								
+								
+								
+							</form>
+							
+						</div> <!-- col -->
+					</div>
+				
+				
+				
+			</div> <!-- grid body -->
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

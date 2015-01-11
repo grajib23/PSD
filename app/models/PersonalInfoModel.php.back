@@ -1,0 +1,21 @@
+<?php 
+ class PersonalInfoModel extends Eloquent {
+ 	protected $table = 'personal_info';
+ 	public $timestamps = false;
+ 	protected $fillable=array('national_id','name_in_bangla','name_in_english',
+ 		             'fname_in_bangla','fname_in_english','mname_in_bangla',
+ 		             'mname_in_english','DOB','sex','join_date','religion','confirm_go_date',
+ 		             'religion','confirm_go_date','lpr_date', 
+ 					 'present_add_id','current_posting_id','marital_stat','freedom_fighter',
+ 					 'child_or_grand_child_of_freedom_fighter','service_history_id','batch','rank_id',
+ 					 'created_at','created_by');
+ 	
+ 	//public function userPersonalInfo($data){
+
+
+ 	//}
+ 	
+ } 
+
+
+?>

@@ -1,0 +1,84 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+		
+	<div class="page-title">	
+		<h3>Report yesterday</h3>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="grid simple">
+				<div class="tiles blue m-b-20">
+				  <div class="tiles-body">
+				  <div class="controller"> <a href="javascript:;" class="reload"></a> <a href="javascript:;" class="remove"></a> </div>
+					<div class="tiles-title text-black">SUMMARY</div>
+					 <div class="widget-stats">
+					  <div class="wrapper transparent"> 
+						<span class="item-title">Total cash collected</span> <span class="item-count animate-number semi-bold" data-value="50000" data-animation-duration="700">50,000/-</span> 
+					  </div>
+					</div>
+					<div class="widget-stats">
+					  <div class="wrapper last">
+						<span class="item-title">Total cash collection should be</span> <span class="item-count animate-number semi-bold" data-value="25000" data-animation-duration="700">25,000/-</span> 
+					  </div>
+					</div>
+				  </div>			
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Yesterday's <span class="semi-bold">Reports</span></h3>
+			</div>
+			
+			
+			
+			<div class="grid-body">
+				
+				
+				
+				<table class="dt_custom table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Delivery Person's Name</th>
+							<th>Current Deliver on going</th>
+							<th>Cash Collected</th>
+							<th>Debit</th>
+							<th>Credit</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Milton Sarkar</td>
+							<td>3</td>
+							<td>4000</td>
+							<td>4000</td>
+							<td>0</td>
+						</tr>
+						<tr>
+							<td>BNP Sarkar</td>
+							<td>0</td>
+							<td>1000</td>
+							<td>1000</td>
+							<td>500</td>
+						</tr>
+						
+						
+						
+					</tbody>
+				</table>
+				
+				
+				
+			</div> <!-- grid body -->
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,20 @@
+<?php 
+	class PostingModel extends Eloquent {
+ 	
+ 	public function setPostingType($data){
+
+ 		$result = DB::insert('insert into posting_types (`type_name`,`is_active`) values(?,?)',array($data['type_name'],$data['is_active']));
+ 		return $result;
+
+ 	}
+ 	public function getAllPostingTypes(){
+ 		
+ 		$result = DB::table('posting_types')->where('is_active',1)->get();
+ 		return $result ;
+ 	}
+ 	
+
+ 	
+ }
+
+?>

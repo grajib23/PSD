@@ -1,0 +1,12 @@
+{
+  "messageText": "Add GCMMessageLog ",
+  "data": {
+    "gcmMessage": 
+      {
+        "message" : "Order Reject by Customer",
+        "orderId": "0RD78PO",
+        "userId" : 32
+      }
+  },
+  "serviceUser":"WebApp"
+}

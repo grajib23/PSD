@@ -1,0 +1,7 @@
+<?php 
+	class CardreModel extends Eloquent {
+		protected $table = 'cadres' ;
+		public $timestamps = true ;
+	}
+
+?>

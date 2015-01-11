@@ -1,0 +1,310 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<div class="page-title">	
+		<h3>Dashboard</h3>
+	</div>
+	<?php
+	// echo '<pre>';
+	     $apiToken = Session::get('apiToken');
+	     var_dump($apiToken);
+
+		 $dashboardData = json_decode($dashboardjson, true);
+
+		 $deliveryPersons = $dashboardData["deliveryPersons"];
+		 $initialCash 	 = $dashboardData["initialCash"];
+		 $deliveredOrders 	 = $dashboardData["deliveredOrders"];
+		 $deliveryDelayInfoYesterDay = $deliveredOrders["yesterDay"];
+		 $deliveryDelayInfoToDay = $deliveredOrders["today"];
+		 //print_r($deliveredOrders);
+	//echo '</pre>';
+	?>
+	<div class="row">
+		<div class="col-md-6 col-sm-6 spacing-bottom-sm spacing-bottom">
+            <div class="tiles green">
+              <div class="tiles-body">
+               
+                <div class="tiles-title"> Total Cash Collected Yesterday </div>
+                <div class="heading"> <span class="animate-number" data-value="2000" data-animation-duration="1000"></span> </div>
+               
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 spacing-bottom-sm spacing-bottom">
+            <div class="tiles green">
+              <div class="tiles-body">
+                
+                <div class="tiles-title"> Total Cash Collected Today Till Time </div>
+                <div class="heading"> <span class="animate-number" data-value="200" data-animation-duration="1000"></span> </div>
+                
+              </div>
+            </div>
+        </div>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-6 col-vlg-3 col-sm-6">
+			<div class="tiles blue m-b-20">
+              	<div class="tiles-body">
+			  		
+                	<div class="tiles-title text-white">DELIVERY PERSON INFORMATION </div>
+			        <div class="widget-stats">
+                     	<div class="wrapper transparent"> 
+							<span class="item-title">Total Delivery Person</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveryPersons['total']; ?>" data-animation-duration="700"></span>
+						</div>
+                    </div>
+                    <div class="widget-stats">
+                      <div class="wrapper transparent">
+						<span class="item-title">Total Active Person</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveryPersons['active']; ?>" data-animation-duration="700">0</span> 
+					  </div>
+                    </div>
+                    <div class="widget-stats ">
+                      <div class="wrapper last"> 
+						<span class="item-title">Total Inactive Person</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveryPersons['inActive']; ?>" data-animation-duration="700">0</span> 
+					 </div>
+                    </div>
+                   
+			  	</div>			
+			</div>	
+	
+
+		</div>
+		<div class="col-md-6 col-vlg-3 col-sm-6">
+			<div class="tiles blue  m-b-20">
+	            <div class="tiles-body">
+				 	
+	                <div class="tiles-title text-white">INNITIAL AMMOUNT INFORMATION </div>
+			        <div class="widget-stats">
+                      <div class="wrapper transparent"> 
+						<span class="item-title">Total Innitial Ammount Yesterday</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $initialCash['yesterDay'] | 0; ?>" data-animation-duration="700">Null</span>
+					  </div>
+                    </div>
+                    
+                    <div class="widget-stats ">
+                      <div class="wrapper last"> 
+						<span class="item-title">Total Innitial Ammount Today</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $initialCash['toDay'] | 0; ?>" data-animation-duration="700">Null</span> 
+					 </div>
+                    </div>
+                    
+				</div>			
+			</div>	
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-vlg-3 col-sm-6">
+			
+			<div class="tiles black m-b-20">
+	            <div class="tiles-body">
+				 	
+	                <div class="tiles-title text-white">DELAY DELIVERY INFORMATION (RESTAURENT SIDE) </div>
+			        <div class="widget-stats">
+                      <div class="wrapper transparent"> 
+						<span class="item-title">Total Delayed Yesterday</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveryDelayInfoYesterDay['total']; ?>" data-animation-duration="700">0</span>
+					  </div>
+                    </div>
+                    
+                    <div class="widget-stats ">
+                      <div class="wrapper last"> 
+						<span class="item-title">Total Delay Today</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveryDelayInfoToDay['restaurant']; ?>" data-animation-duration="700">0</span> 
+					 </div>
+                    </div>
+                    
+				</div>			
+			</div>		
+		</div>
+	
+        <div class="col-md-6 col-vlg-3 col-sm-6">
+			<div class="tiles black m-b-20">
+	            <div class="tiles-body">
+				 	
+	                <div class="tiles-title text-white">DELAY DELIVERY INFORMATION (DELIVERY SIDE) </div>
+			        <div class="widget-stats">
+                      <div class="wrapper transparent"> 
+						<span class="item-title">Total Delivered Order Yesterday</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveredOrders['yesterDay']['total']; ?>" data-animation-duration="700">0</span>
+					  </div>
+                    </div>
+                    
+                    <div class="widget-stats ">
+                      <div class="wrapper last"> 
+						<span class="item-title">Total Delivered Order Today</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveredOrders['today']['deliveryMan']; ?>" data-animation-duration="700">0</span> 
+					 </div>
+                    </div>
+                    
+				</div>			
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+
+		<div class="col-md-6 col-vlg-3 col-sm-6">
+			<div class="tiles red m-b-20">
+	            <div class="tiles-body">
+				 	
+	                <div class="tiles-title text-white">TOTAL ORDER DELAY FROM RESTAURENT SIDE (TODAY)</div>
+			        
+                    
+                    <div class="widget-stats ">
+                      <div class="wrapper last"> 
+						<span class="item-title">Total Order Delay Today</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveredOrders['today']['restaurant']; ?>" data-animation-duration="700">0</span> 
+					 </div>
+                    </div>
+                    
+				</div>			
+			</div>	
+		</div>
+
+		<div class="col-md-6 col-vlg-3 col-sm-6">
+			<div class="tiles red m-b-20">
+	            <div class="tiles-body">
+				 	
+	                <div class="tiles-title text-white">TOTAL ORDER DELAY FROM DELIVERY SIDE (TODAY)</div>
+			        
+                    
+                    <div class="widget-stats ">
+                      <div class="wrapper last"> 
+						<span class="item-title">Total Order Delay Today</span> <span class="item-count animate-number semi-bold" data-value="<?php echo $deliveredOrders['today']['deliveryMan']; ?>" data-animation-duration="700">0</span> 
+					 </div>
+                    </div>
+                    
+				</div>			
+			</div>	
+		</div>
+
+		
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-lg-12">
+		
+			<div class="grid-title">
+			  <h3>Realtime <span class="semi-bold">Delivery details</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<form id="save_device_form" action="#" method="POST" novalidate="novalidate">
+				  
+					  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						  
+							<?php
+								 $dashboardData = json_decode($dashboardjson, true);
+								 $orders 	 = $dashboardData["orders"];							
+							?>
+							
+
+
+
+							
+							<table id="live_session_datatable" class="table bigDatatable table-hover table-condensed dataTable">
+								
+								<thead>
+									<tr>
+										<td style="width: 108px;">Order ID</td>
+										<td style="width: 210px;">Restaurant</td>
+										<td style="">Counter</td>
+										
+										<td style="width: 15%;">Delivery person</td>
+										<td style="width: 26%;">Problems</td>
+										<td style="width:170px">Actions</td>
+									</tr>
+								</thead>
+								<tbody>
+									<?php foreach($orders as $order): ?>
+									<tr>
+										<td>
+											<?php echo $order["orderId"]; ?>
+
+											<div class="dataGroup">
+												<span class="value red">(pending..)</span>
+											</div>
+										</td>
+										<td>
+											<div class="dataGroup">
+												
+												<span class="value">Nados Eating Hell,</span>
+												
+												<span class="value r_addr"><?php echo $order["restaurantAddress"]; ?></span>
+											</div>
+										</td>
+										
+										<td>
+											<div class="dataGroup">
+												<span class="counterDeco countdown green">
+													<span id="1406116420265" class="counters"></span>
+												</span>
+												<span class="counterDeco type">(Picked up)</span>
+												<!-- <span class="counterDeco status red">
+													<i class="fa fa-pause"></i>
+												</span> -->
+											</div>
+										</td>
+										
+										
+										
+										
+										<td>
+											<div class="dataGroup">
+												
+												<span class="value"><?php echo $order["deliveryMan"]; ?></span>
+											</div>
+											
+										</td>
+										
+										
+										
+										<td>
+											
+											<div class="godfather" style="float:left">
+												
+												<div class="dataGroup">
+													<span class="label">Status</span>
+													<span class="value red">
+														<i class="fa fa-circle"></i>
+													</span>
+
+												</div>
+												
+												
+											</div>
+										</td>
+										<td>
+											<div class="btn-group btn-demo-space">
+												<button class="btn btn-success btn-demo-space">Details</button>
+												<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+												<ul class="dropdown-menu">
+													<li><a href="#">Pause</a></li>
+													<li><a href="#">Reassign</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Manual Assign</a></li>
+												</ul>
+											</div>												
+										</td>
+										
+									</tr>
+									<?php endforeach; ?>
+									
+								</tbody>
+								
+							</table>
+							
+							
+							
+						 
+						</div>
+					</div>
+				</form>
+				
+				
+				
+			</div>
+			
+		</div>
+	</div>
+	
+</div>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

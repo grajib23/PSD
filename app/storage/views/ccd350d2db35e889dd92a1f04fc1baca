@@ -1,0 +1,271 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<div class="page-title">	
+		<h3>Add New Delivery Person</h3>
+	</div>
+	<?php
+		echo '<pre>';
+		//print_r(json_decode($devicemonitorjson, true));
+		$getAllCityData = json_decode($getAllCityJSON, true);
+		
+		$getAllrankData = json_decode($getAllrankJSON, true);
+		$allRanks = $getAllrankData["ranks"];
+
+		$getAllDeviceWithIdData = json_decode($getAllDeviceWithIdJSON,true);
+		$getAllDevice = $getAllDeviceWithIdData["devices"];
+		print_r($getAllCityData);
+		//die();
+		echo '</pre>';
+		$apiToken = Session::get('apiToken');
+	    var_dump($apiToken);									
+	?> 
+	<script>
+		var cityZones = <?=$getAllCityJSON?>;
+	</script>
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Add <span class="semi-bold">New Delivery Person</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<form id="save_delivery_person_form" action="#" method="POST">
+				  
+					  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						  
+						  
+						  <input type="hidden" value = "<?php echo $apiToken; ?>" name="apitoken" id="apitoken">
+
+						  <div class="form-group">
+							<label class="form-label">Delivery Person's Photo</label>
+							<div class="input-with-icon right">                                       
+							    <input type="file" accept="image/*">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Name</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="dp_name" id="dp_name">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Date Of Birth</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<div class="input-append success date">
+									<input type="text" class="span12" name="dob" id="dob">
+									<span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> 
+								</div>
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Current Address</label>
+							<div class="controls">
+								<textarea name="currentAddrs" id="currentAddrs" class="span12 custom-editor form-control" rows="5"></textarea>
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Parmanent Address</label>
+							<div class="controls">
+								<textarea name="parmanentAddrs" id="parmanentAddrs" class="span12 custom-editor form-control" rows="5"></textarea>
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">National ID</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="national_id" id="national_id">
+							</div>
+						  </div>
+
+						  <div class="form-group">
+							<label class="form-label">Email</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="email" id="email">
+							</div>
+						  </div>
+						 	<div class="form-group">
+								<label class="form-label">Sex</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									
+									<select class="" name="sex" id="sex"style="width:100%">
+								
+											<option value="male">Male</option>
+											<option value="female">FeMale</option>
+										
+									</select>
+									
+								</div>
+							</div>
+						  <div class="form-group">
+							<label class="form-label">Phone Number</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="phone" id="phone">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Father Name</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="father_name" id="father_name">
+							</div>
+						  </div>
+						  <div class="form-group">
+							<label class="form-label">Mother Name</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="mother_name" id="mother_name">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Father Phone number</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="father_phone" id="father_phone">
+							</div>
+						  </div>
+						  <div class="form-group">
+							<label class="form-label">Mother Phone number</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="mother_phone" id="mother_phone">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">App Username</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="app_username" id="app_username">
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">App password</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="password" class="form-control" name="app_pass" id="app_pass">
+							</div>
+						  </div>
+						  <div class="form-group">
+							<label class="form-label">Re-type App password</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="password" class="form-control" name="retype_app_pass" id="retype_app_pass">
+							</div>
+						  </div>
+
+						    <div class="form-group">
+								<label class="form-label">Select Device</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="selectedDevicetoAssain" id="selectedDevicetoAssain"style="width:100%">
+											<option value="0">Select Device</option>
+										<?php foreach($getAllDevice as $deviceinfo): ?> 
+											<option value="<?php echo $deviceinfo["deviceName"]; ?>"><?php echo $deviceinfo["model"]; ?></option>
+										<?php endforeach; ?>	
+									</select>
+								</div>
+							</div>
+
+						  	<div class="form-group">
+								<label class="form-label">Rank ID</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									
+									<select class="init_select2_byHtml" name="rank_id" id="rank_id"style="width:100%">
+											<?php foreach($allRanks as $rank): ?>
+											<option value="<?php echo $rank["id"]; ?>"><?php echo $rank["title"]; ?></option>
+											<?php endforeach; ?>
+										
+									</select>
+									
+								</div>
+							</div>
+						  
+						  
+						  	<div class="form-group">
+								<label class="form-label">Select City</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									
+									<select class="init_select2_byHtml" name="selectCity" id="selectCity"style="width:100%">
+										<option value="0">Select City</option>
+										<?php foreach($getAllCityData as $key=>$allcity): ?>
+											<option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+										<?php endforeach; ?>
+
+									</select>
+									
+								</div>
+							</div>
+
+							<!-- ignore the alignment! It's ok! -->
+							<div class="form-group">
+								<label class="form-label">Default Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="defaultZone" id="defaultZone"style="width:100%">
+										<!-- Default zone is active when select City-->
+										<option value="0">Select Default Zone</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="form-label">Coverable Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" multiple="multiple" name="coverZone[]" id="coverZone" style="width:100%">
+										<!-- Coverabla zone is active when select City -->
+									</select>
+								</div>
+							</div>
+						  
+						  
+						  
+						  
+							<div class="actions clearfix">  
+								<div class="pull-right">
+									<button type="submit" class="btn btn-primary btn-cons" id="addeliveryPerson" name="addeliveryPerson"><i class="icon-ok"></i> Save</button>
+									<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+								</div>
+							</div>
+
+							
+							
+						</div>
+					</div>
+				</form>
+						
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

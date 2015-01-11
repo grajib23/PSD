@@ -1,0 +1,15 @@
+{  
+    "messageText":"Edit Printer",
+    "serviceUser":"WebApp",
+    "data":{  
+        "printerInfo":{  
+            "id":1,
+            "name":"DP-550",
+            "model":"Hx3.9",
+            "description":"Tharaml printer",
+            "warranty":"2016-12-12 ",
+            "signature":"21gjh3hjg3g3g",
+            "status":0
+        }
+    }
+}

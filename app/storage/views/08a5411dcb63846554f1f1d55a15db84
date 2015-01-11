@@ -1,0 +1,182 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<div class="page-title">	
+		<h3>Add New Delivery Person</h3>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Add <span class="semi-bold">New Delivery Person</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<form id="save_device_form" action="#" method="POST" novalidate="novalidate">
+				  
+					  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						  
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Delivery Person's Photo</label>
+							<div class="input-with-icon right">                                       
+							    <input type="file" accept="image/*">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Name</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="dp_name" id="dp_name">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Date Of Birth</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<div class="input-append success date">
+									<input type="text" class="span12" name="dob">
+									<span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> 
+								</div>
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Current Address</label>
+							<div class="controls">
+								<textarea name="currentAddrs" id="currentAddrs" class="span12 custom-editor form-control" rows="5"></textarea>
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Parmanent Address</label>
+							<div class="controls">
+								<textarea name="parmanentAddrs" id="parmanentAddrs" class="span12 custom-editor form-control" rows="5"></textarea>
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">National ID</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="national_id" id="national_id">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Phone Number</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="phone" id="phone">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Parent's Name</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="parents_name" id="parents_name">
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Parent's Phone number</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="parents_phone" id="parents_phone">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">App Username</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="app_username" id="app_username">
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">App password</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="password" class="form-control" name="app_uname" id="app_uname">
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Re-type App password</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="password" class="form-control" name="retype_app_pass" id="retype_app_pass">
+							</div>
+						  </div>
+						  
+							<!-- ignore the alignment! It's ok! -->
+							<div class="form-group">
+								<label class="form-label">Default Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="defaultZone" style="width:100%">
+										
+										<option value="1">Mohakhali DOHS</option>
+										<option value="2" selected="selected">Gulshan 1</option>
+										<option value="3">Gulshan 2</option>
+										<option value="4">Lalmatia</option>
+										<option value="5">Mirpur DOHS</option>
+										
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="form-label">Coverable Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" multiple="multiple" name="defaultZone" style="width:100%">
+										
+										<option value="1">Mohakhali DOHS</option>
+										<option value="2" selected="selected">Gulshan 1</option>
+										<option value="3" selected="selected">Gulshan 2</option>
+										<option value="4">Lalmatia</option>
+										<option value="5">Mirpur DOHS</option>
+										
+									</select>
+								</div>
+							</div>
+						  
+						  
+						  
+						  
+							<div class="actions clearfix">  
+								<div class="pull-right">
+									<button type="submit" class="btn btn-primary btn-cons"><i class="icon-ok"></i> Save</button>
+									<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+								</div>
+							</div>
+
+							
+							
+						</div>
+					</div>
+				</form>
+						
+				
+			</div>
+			
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

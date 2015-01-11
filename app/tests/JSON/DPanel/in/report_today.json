@@ -1,0 +1,22 @@
+{  
+    "deliveryPersons":[  
+        {  
+            "userName":"Dman 222",
+            "currentOrderQueue":"22",
+            "orderCollectedAmount":0,
+            "debit":0,
+            "credit":0
+        },
+        {  
+            "userName":"Abdur Rohim",
+            "currentOrderQueue":"33",
+            "orderCollectedAmount":700,
+            "debit":700,
+            "credit":900
+        }
+    ],
+    "cash":{  
+        "totalCashCollected":700,
+        "totalCashCollectionShouldBe":800
+    }
+}

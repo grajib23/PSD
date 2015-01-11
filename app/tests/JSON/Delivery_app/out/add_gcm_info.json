@@ -1,0 +1,12 @@
+{  
+    "messageName":"Add GCM Info",
+    "serviceUser":"deliveryNativeApp",
+    "data":{  
+        "device":{  
+            "deviceId":"D2234",
+            "gcmId":"APA91bElKwg3dzn8uTtNH_MQ3M6MpFnerR7vmCofALDFsbiRNDAuGBtq2CXXjzVjSl4BsP1OFYic9oIWgXlaOTNCy_CoK_G8fbwGa9EhJQRYkhTiL0LLELLNF50kp8bG-wBqU4HuibL46BT4hhmmrHtnWmxaZZHI0kgH3wr2xnfaoKq2D5rSnxk"
+        },
+        "apiToken":"037919fc32f46bcc7fe6cd0cc03f30c2931a43c66492bc0acdc723d1fd6ec7fa",
+        "userId":33
+    }
+}

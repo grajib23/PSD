@@ -1,0 +1,13 @@
+{
+  "momentTimestamp": "16-06-2014 18:04:50",
+  "messageText": "Get GCMMessageLog By year month day ",
+  "data": {
+    "gcmMessage": 
+      {
+        "year" : 2014,
+        "month": 11,
+        "day"  : 6
+      }
+  },
+  "serviceUser":"WebApp"
+}

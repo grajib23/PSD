@@ -1,0 +1,36 @@
+{  
+    "messageName":"orderRejectedByDeliveryPerson",
+    "data":{
+        "device":{  
+            "gcmRegistrationId":"gcmRegistrationId",
+            "totalApp":53,
+            "gpsStatus":0,
+            "location":{  
+                "longitude":"0.0",
+                "latitude":"0.0"
+            },
+            "status":"online",
+            "battery":"89%",
+            "deviceSignature":"350820130485599",
+            "networkStrength":"14db",
+            "currentDeviceTime":"2014-11-02 14:50:12",
+            "dataUpDown":{  
+                "dataUpload":"371kB",
+                "dataDownload":"2296kB"
+            }
+        },
+        "reason":{
+            "statusTypeTitle":"orderAccepted",
+            "statusReasonTitle":"dsfsa"
+        },
+        "currentAddress":"Not Retrieve",
+        "currentActivity":"Not Retrieve",
+        "orderStatus":"orderRejectedByDeliveryPerson",
+        "orderId":"O67893",
+        "restaurantId":"80",
+        "apiToken":"874bdcc66d518828f56300b2bdab2d4c66ea5e77482ed04334d0e5d82582adca",
+        "userId":"33"
+
+    },
+    "serviceUser":"deliveryNativeApp"
+}

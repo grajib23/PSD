@@ -1,0 +1,84 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<?php
+		echo '<pre>';
+		//print_r(json_decode($devicemonitorjson, true));
+	    $apiToken = Session::get('apiToken');
+	    var_dump($apiToken);
+
+		$allDeliveryPersonData = json_decode($allDeliveryPersonJSON, true);
+		$alldeliveryMan = $allDeliveryPersonData["deliveryPersons"];
+		//print_r($allDeliveryPersonJSON);
+		//die();
+		
+		echo '</pre>';	
+	?> 
+
+	<div class="page-title">	
+		<h3>Assign initial cash</h3>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Assain Initial cash</h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				
+				  							  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						 								  
+							<form id="assign_init_cash_form" action="#" method="POST" novalidate="novalidate">
+							
+								<input type="hidden" value = "<?php echo $apiToken; ?>"name="apitoken" id="apitoken">
+								
+								 <div class="form-group">
+									<label class="form-label">Select person</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<select class="initialCashDrop init_select2_byHtml" name="assignCashTo" id="assignCashTo"style="width:100%">
+											<?php foreach($alldeliveryMan as $dmanName): ?>
+											<option value="<?php echo $dmanName['id']; ?>"><?php echo $dmanName["userName"]; ?></option>
+											<?php endforeach; ?>
+										</select>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label">Cash Amount</label>
+									<span class="help">e.g. "300"</span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<input type="text" class="form-control" name="cashAmount" id="cashAmount">
+									</div>
+								</div>
+								
+								<div class="actions clearfix">  
+									<div class="pull-right">
+										<a href=""><button type="submit" id="assainInitialCash"class="btn btn-primary btn-cons"><i class="icon-ok"></i> Assign</button></a>
+										<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+									</div>
+								</div>
+								
+							</form>
+							
+						</div> <!-- col -->
+					</div>
+				
+				
+				
+			</div> <!-- grid body -->
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

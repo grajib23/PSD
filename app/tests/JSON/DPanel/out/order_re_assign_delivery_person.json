@@ -1,0 +1,17 @@
+{
+  "momentTimestamp":"16-06-2014 18:04:50",
+  "messageText":"Re Assign Delivery Person",
+  "source":"192.168.10.0",
+  "destination":"162.192.10.12",
+  "serverStatus":"online",
+  "data":{
+       "orderId": "O67892",
+       "orderStatus": "orderReAssignedByDeliveryAgent",
+        "reason":{
+           "statusTypeId":1,
+           "statusReasonId":1
+        }
+  },
+  "serviceUser":"WebApp",
+  "serviceUserKey":"SG7236SK"
+}

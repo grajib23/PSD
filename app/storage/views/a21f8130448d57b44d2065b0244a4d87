@@ -1,0 +1,76 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+		
+	<div class="page-title">	
+		<h3>Assign initial cash</h3>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Initial cash</h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				
+				  							  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						 								  
+							<form id="assign_init_cash_form" action="#" method="POST" novalidate="novalidate">
+							
+							
+							
+								 <div class="form-group">
+									<label class="form-label">Select person</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<select class="initialCashDrop init_select2_byHtml" name="assignCashTo" style="width:100%">
+											
+											<option value="MA">Motin Ali</option>
+											<option value="ZK">Zobbar Khan</option>
+											<option value="KH">Kashem Hawlader</option>
+											<option value="BM">Boman Irani</option>
+											<option value="GW">Gorge Washington</option>
+											<option value="all">Select All</option>
+											
+										</select>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label">Cash Amount</label>
+									<span class="help">e.g. "300"</span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<input type="text" class="form-control" name="cashAmount" id="cashAmount">
+									</div>
+								</div>
+								
+								<div class="actions clearfix">  
+									<div class="pull-right">
+										<button type="submit" class="btn btn-primary btn-cons"><i class="icon-ok"></i> Assign</button>
+										<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+									</div>
+								</div>
+								
+							</form>
+							
+						</div> <!-- col -->
+					</div>
+				
+				
+				
+			</div> <!-- grid body -->
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

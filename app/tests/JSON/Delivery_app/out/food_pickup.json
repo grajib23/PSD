@@ -1,0 +1,36 @@
+{
+    "serviceUser":"deliveryNativeApp",
+    "data":{
+        "orderProvidedAmount":"895.25",
+        "apiToken":"874bdcc66d518828f56300b2bdab2d4c66ea5e77482ed04334d0e5d82582adca",
+        "currentAddress":"Not Retrieve",
+        "reason":{
+            "statusReasonTitle":"FullPayment",
+            "statusTypeTitle":"FoodPickedUp"
+        },
+        "userId":"33",
+        "device":{
+            "gcmRegistrationId":"gcmRegistrationId",
+            "totalApp":53,
+            "gpsStatus":0,
+            "location":{
+                "longitude":"0.0",
+                "latitude":"0.0"
+            },
+            "status":"online",
+            "battery":"89%",
+            "deviceSignature":"350820130485599",
+            "networkStrength":"14db",
+            "currentDeviceTime":"2014-11-02 14:56:38",
+            "dataUpDown":{
+                "dataUpload":"379kB",
+                "dataDownload":"2323kB"
+            }
+        },
+        "orderProvidedAmountReasonTitle":"FullPayment",
+        "currentActivity":"Not Retrieve",
+        "orderStatus":"orderFoodPickedUpByDeliveryPerson",
+        "orderId":"O67893"
+    },
+    "messageName":"Food Picked Up By Delivery Person"
+}

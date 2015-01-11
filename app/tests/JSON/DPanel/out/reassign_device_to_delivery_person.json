@@ -1,0 +1,9 @@
+{
+  "data":{
+       "deliveryPersonId": "33",
+       "deliveryPersonName": "Abdur Rohim",
+       "deviceId": "D45H9930"
+  },
+  "messageText":"Reassign Device To Delivery Person",
+  "serviceUser":"WebApp"
+}

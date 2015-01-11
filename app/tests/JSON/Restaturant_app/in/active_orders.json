@@ -1,0 +1,17 @@
+{  
+    "orders":[  
+        {  
+            "orderId":"O67892",
+            "orderPrice":"450.00",
+            "orderDetails":"{\n \"momentTimestamp\": \"16-06-2014 18:04:50\",\n \"messageText\": \"New Order With Details\",\n \"source\": \"192.168.10.0\",\n \"destination\": \"deliveryModule\",\n \"data\": {\n \"serverStatus\": \"online\",\n \"order\":\n {\n \"orderId\": \"O67892\",\n \"orderStatus\": \"waitForAction\",\n \"status\": \"active\",\n \"barcodeId\": \"66743f19E959-489fB053-27ba4c61ff25\",\n \"restaurantId\": \"80\",\n \"restaurantName\": \"SUB FACTORY\",\n \"restaurantAddress\": \"Bonani 11, House 9\/a, ground floore.\",\n \"restaurantPhone\": \"+8801675843137\",\n \"restaurantLocation\": {\n \"latitude\": 23.746465300000000000,\n \"longitude\": 90.376012500000000000\n },\n \"timer\": {\n \"type\": \"pickupTimer\",\n \"startTime\": \"16-06-2014 18:00:11\",\n \"endTime\": \"16-06-2014 18:20:11\",\n \"extraTime\": 60\n },\n \"cartItems\": [\n {\n \"id\": \"1025\",\n \"itemUid\": \"1ae6c81a-338e-445e-9cff-2c35ee49cb41\",\n \"name\": \"Chicken Strips\",\n \"image\": \"http:\/\/image.url\",\n \"audioStreamId\": \"mp34432230\",\n \"preparationTime\": \"120\",\n \"quantity\": 3,\n \"totalPrice\": 735,\n \"discount\": {\n \"type\": \"amount\",\n \"amount\": 100\n },\n \"itemToppings\": [\n {\n \"id\": \"316\",\n \"name\": \"Italiano\",\n \"audioStreamId\": \"mp34432230\",\n \"price\": \"0.00\"\n },\n {\n \"id\": \"310\",\n \"name\": \"Cucumber\",\n \"audioStreamId\": \"mp34432230\",\n \"price\": \"0.00\"\n }\n ]\n },\n {\n \"id\": \"1025\",\n \"itemUid\": \"1ae6c81a-338e-445e-9cff-2c35ee49cb41\",\n \"name\": \"Chicken Strips\",\n \"image\": \"http:\/\/image.url\",\n \"audioStreamId\": \"mp34432230\",\n \"preparationTime\": \"120\",\n \"quantity\": 3,\n \"totalPrice\": 735,\n \"discount\": {\n \"type\": \"amount\",\n \"amount\": 100\n },\n \"itemToppings\": [\n {\n \"id\": \"316\",\n \"name\": \"Italiano\",\n \"audioStreamId\": \"mp34432230\",\n \"price\": \"0.00\"\n },\n {\n \"id\": \"310\",\n \"name\": \"Cucumber\",\n \"audioStreamId\": \"mp34432230\",\n \"price\": \"0.00\"\n }\n ]\n }\n ],\n \"prices\": {\n \"subTotal\" : \"12365.123567\",\n \"restaurantServiceCharge\" : \"123.453\",\n \"vat\" : \"123\",\n \"discount\" : \"32\",\n \"total\" : \"895.25\",\n \"cashCollectAmount\": \"895.25\"\n },\n \"userData\": {\n \"userId\": \"71\",\n \"userName\": \"Rain Walker\",\n \"receiverName\": \"Ratul Ahmed\",\n \"receiverPhone\": \"01756170159\",\n \"receiverAddress\": \"Dhaka, Mainka chipa, Chekra potti, 32 no, bosti\",\n \"receiverArea\": \"Bonani\",\n \"receiverAreaId\":2\n }\n }\n \n },\n \"serviceUser\":\"hungryNaki.com\",\n \"serviceUserKey\":\"SG7236SK\"\n}",
+            "orderCurrentStatus":"orderProblemByDeliveryPerson",
+            "startTime":"2014-09-13 04:10:04",
+            "endTime":"2014-11-11 19:45:00",
+            "remainTime":"-1331",
+            "isAccept":"1",
+            "isKitchen":"0",
+            "isReady":"0",
+            "isDelivered":"0"
+        }
+    ]
+}

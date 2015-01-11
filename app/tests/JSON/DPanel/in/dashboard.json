@@ -1,0 +1,33 @@
+{  
+    "deliveryPersons":{  
+        "total":"6",
+        "active":"2",
+        "inActive":"4"
+    },
+    "initialCash":{  
+        "toDay":"128",
+        "yesterDay":"10"
+    },
+    "deliveredOrders":{  
+        "today":{  
+            "total":1,
+            "restaurant":0,
+            "deliveryMan":1
+        },
+        "yesterDay":{  
+            "total":0,
+            "restaurant":0,
+            "deliveryMan":0
+        }
+    },
+    "orders":[  
+        {  
+            "orderId":"O67893",
+            "restaurantAddress":"Bonani 11, House 9\/a, ground floore.",
+            "customerAddress":"Dhaka, Mainka chipa, Chekra potti, 32 no, bosti",
+            "remainTime":"15027",
+            "deliveryMan":"Abdur Rohim",
+            "orderCurrentStatus":"orderFoodDeliveredByDeliveryPerson"
+        }
+    ]
+}

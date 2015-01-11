@@ -1,0 +1,173 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+		
+	<div class="page-title">	
+		<h3>List Delivery Person</h3>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>All delivery person's informations and actions</h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<table class="dt_custom bigDatatable table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Personal info</th>
+							<th>Address</th>
+							<th>Contact</th>
+							<th>App details</th>
+							<th>Zone</th>
+							<th style="width:125px">Action</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="dataGroup">
+									<span class="value"><img src="http://placehold.it/75x75&text=Pic1"/></span>
+									<span class="value">Molla Nasir Shah</span>
+									<span class="label">Date of Birth</span>
+									<span class="value">12/12/1975</span>
+									<span class="label">National ID</span>
+									<span class="value">185389638726334</span>
+								</div>
+							</td>
+							
+							<td>
+								<div class="dataGroup">
+									<span class="label">Present</span>
+									<span class="value">Ni Tower, Block # E, Road No # 10, Banani, Dhaka</span>
+									<span class="label">Permanent</span>
+									<span class="value">House # 11, Road # 17/A. Banani, Dhaka</span>
+								</div>
+							</td>
+							
+							<td>
+								<div class="dataGroup">
+									<span class="label">Phone:</span>
+									<span class="value">01678767862</span>
+								</div>
+								<div class="dataGroup">
+									<span class="label">Parent's Name:</span>
+									<span class="value">Dilkusha Banu</span>
+								</div>
+								<div class="dataGroup">
+									<span class="label">Parent's Phone:</span>
+									<span class="value">011987678789</span>
+								</div>
+							</td>
+							<td>
+								<div class="dataGroup">
+									<span class="label">App username</span>
+									<span class="value">m.nasir</span>
+									<span class="label">App password</span>
+									<span class="value">komolmotibegum97</span>
+								</div>
+							</td>
+							<td>
+								<div class="dataGroup">
+									<span class="label">Default Zone:</span>
+									<span class="value">Gulshan 1</span>
+									<span class="label">Coverable Zone:</span>
+									<span class="value">Gulshan 1, Gulshan 2</span>
+								</div>
+							</td>
+							<td>
+								<div class="btn-group btn-demo-space">
+									<button class="btn btn-success btn-demo-space">Action</button>
+									<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Enable</a></li>
+										<li><a href="#">Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Edit</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="dataGroup">
+									<span class="value"><img src="http://placehold.it/75x75&text=Pic2"/></span>
+									<span class="value">Molla Nasir Shah2</span>
+									<span class="label">Date of Birth</span>
+									<span class="value">12/12/1965</span>
+									<span class="label">National ID</span>
+									<span class="value">185389638726334</span>
+								</div>
+							</td>
+							
+							<td>
+								<div class="dataGroup">
+									<span class="label">Present</span>
+									<span class="value">Ni Tower, Block # E, Road No # 10, Banani, Dhaka</span>
+									<span class="label">Permanent</span>
+									<span class="value">House # 11, Road # 17/A. Banani, Dhaka</span>
+								</div>
+							</td>
+							
+							<td>
+								<div class="dataGroup">
+									<span class="label">Phone:</span>
+									<span class="value">01678767862</span>
+								</div>
+								<div class="dataGroup">
+									<span class="label">Parent's Name:</span>
+									<span class="value">Dilkusha Banu</span>
+								</div>
+								<div class="dataGroup">
+									<span class="label">Parent's Phone:</span>
+									<span class="value">011987678789</span>
+								</div>
+							</td>
+							<td>
+								<div class="dataGroup">
+									<span class="label">App username</span>
+									<span class="value">m.nasir</span>
+									<span class="label">App password</span>
+									<span class="value">komolmotibegum97</span>
+								</div>
+							</td>
+							<td>
+								<div class="dataGroup">
+									<span class="label">Default Zone:</span>
+									<span class="value">Gulshan 1</span>
+									<span class="label">Coverable Zone:</span>
+									<span class="value">Gulshan 1, Gulshan 2</span>
+								</div>
+							</td>
+							<td>
+								<div class="btn-group btn-demo-space">
+									<button class="btn btn-success btn-demo-space">Action</button>
+									<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Enable</a></li>
+										<li><a href="#">Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Edit</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						
+						
+						
+					</tbody>
+				</table>
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

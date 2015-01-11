@@ -1,0 +1,130 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+		
+	<div class="page-title">	
+		<h3>List Delivery Person</h3>
+	</div>
+	<?php
+		//echo '<pre>';
+		//print_r(json_decode($devicemonitorjson, true));
+		$ListDeliveryPersonData = json_decode($Listdeliverypersonjson, true);
+		$ListDeliveryPersonInfo = $ListDeliveryPersonData["deliveryPersons"];
+		//print_r($ListDeliveryPersonInfo);
+		//die();
+		$apiToken = Session::get('apiToken');
+	    //var_dump($apiToken);
+		//echo '</pre>';
+
+	?> 
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>All delivery person's informations and actions</h3>
+			</div>
+			
+			<div class="grid-body">
+				<input type="hidden" value = "<?php echo $apiToken; ?>" name="apitoken" id="apitoken">
+				<table class="dt_custom bigDatatable table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Personal info</th>
+							<th>Address</th>
+							<th>Contact</th>
+							<th>App details</th>
+							<th>Zone</th>
+							<th style="width:125px">Action</th>
+							
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($ListDeliveryPersonInfo as $DPinfo): ?>
+						<tr>
+							<td>
+								<div class="dataGroup">
+									<span class="value"><img src="http://placehold.it/75x75&text=Pic1"/></span>
+									<span class="value"><?php echo $DPinfo["firstName"]; ?><?php echo $DPinfo["LastName"]; ?></span>
+									<span class="label">Date of Birth</span>
+									<span class="value"><?php echo $DPinfo["dob"]; ?></span>
+									<span class="label">National ID</span>
+									<span class="value"><?php echo $DPinfo["nationalId"]; ?></span>
+								</div>
+							</td>
+							
+							<td>
+								<div class="dataGroup">
+									<span class="label">Present</span>
+									<span class="value"><?php echo $DPinfo["currentAddress"]; ?></span>
+									<span class="label">Permanent</span>
+									<span class="value"><?php echo $DPinfo["parmanentAddress"]; ?></span>
+								</div>
+							</td>
+							
+							<td>
+								<div class="dataGroup">
+									<span class="label">Phone:</span>
+									<span class="value"><?php echo $DPinfo["phoneNumber"]; ?></span>
+								</div>
+								<div class="dataGroup">
+									<span class="label">Parent's Name:</span>
+									<span class="value"><?php echo $DPinfo["fatherName"]; ?></span>
+								</div>
+								<div class="dataGroup">
+									<span class="label">Parent's Phone:</span>
+									<span class="value"><?php echo $DPinfo["fatherPhoneNumber"]; ?></span>
+								</div>
+							</td>
+							<td>
+								<div class="dataGroup">
+									<span class="label">User Email</span>
+									<span class="value"><?php echo $DPinfo["email"]; ?></span>
+									<span class="label">App User Name</span>
+									<span class="value"><?php echo $DPinfo["userName"]; ?></span>
+									<span class="label">App password</span>
+									<span class="value">App Pssword Json Missing</span>
+									<span class="label">Current Rank</span>
+									<span class="value"><?php echo $DPinfo["currentRank"]; ?></span>
+								</div>
+							</td>
+							<td>
+								<div class="dataGroup">
+									<span class="label">Default Zone:</span>
+									<span class="value"><?php echo $DPinfo["defaultZone"]; ?></span>
+									<span class="label">Coverable Zone:</span>
+									<?php 
+										$DBManlocation = (object)unserialize(trim($DPinfo["coverableZone"]));
+	 									//var_dump($DBManlocation);
+									?> 
+									<?php foreach($DBManlocation as $location): ?>
+									<span class="value"><?php echo $location["zoneName"]; ?></span>
+									<?php endforeach; ?>
+								</div>
+							</td>
+							<td>
+								<div class="btn-group btn-demo-space">
+									<button class="btn btn-success btn-demo-space">Action</button>
+									<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+									<ul class="dropdown-menu">
+										<li><a href="#" dperson-mail="<?php echo $DPinfo["email"]; ?>" class="dpersonActive">Active</a></li>
+										<li><a href="#" dperson-mail="<?php echo $DPinfo["email"]; ?>" class="dpersonBan">Ban</a></li>
+										<li><a href="#" dperson-mail="<?php echo $DPinfo["email"]; ?>" class="dpersonUnban">Unban</a></li>
+										<li class="divider"></li>
+										<li><a href="/editdeliveryperson">Edit</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

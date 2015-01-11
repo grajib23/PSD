@@ -1,0 +1,191 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+	<?php
+		//echo '<pre>';
+		$apiToken = Session::get('apiToken');
+	   // var_dump($apiToken);
+		//print_r(json_decode($devicemonitorjson, true));
+		$getAllCityData = json_decode($getAllCityJSON, true);
+		$changeZoneData = json_decode($changeZoneJSON, true);
+		$assinNewZoneDP = $changeZoneData["deliveryPersons"];
+		//print_r($assinNewZoneDP);
+		//die();
+		//echo '</pre>';
+
+	?> 	
+	<script>
+		var changeDpersonZone = <?=$changeZoneJSON?>;
+		var cityZones = <?=$getAllCityJSON?>;
+	</script>
+
+	<div class="page-title">	
+		<h3>Change Delivery Person Zone</h3>
+	</div>
+	
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Delivery Person Current <span class="semi-bold">Zone</span></h3>
+			</div>
+			
+			<div class="grid-body">							  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						 								  
+							<form id="change_zone_form_lol" action="#" method="" novalidate="">
+								
+								<div class="form-group">
+									<label class="form-label">Select delivery person</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<select class="init_select2_byHtml" name="deliveryPersonUname" id="deliveryPersonUname" style="width:100%">
+											<?php foreach($assinNewZoneDP as $key=>$assDP): ?>
+												<option value="<?php echo $assDP["id"]; ?>"><?php echo $assDP["userName"]; ?></option>
+											<?php endforeach; ?>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="form-label">Select City</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										
+										<select class="init_select2_byHtml" name="dManCity" id="dManCity" style="width:100%">
+											
+										</select>
+										
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label">Default Zone</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										<select class="init_select2_byHtml" name="dMandefaultZone" id="dMandefaultZone" style="width:100%">
+												<!-- <option value="dhaka">Dhaka</option> -->	
+										</select>
+									</div>
+								</div>
+								
+								<div class="form-group">
+									<label class="form-label">Coverable Zone</label>
+									<span class="help"></span>
+									<div class="input-with-icon right">                                       
+										<i class=""></i>
+										
+										
+											<select class="init_select2_byHtml" multiple="multiple" name="dManCoverZone[]" id="dManCoverZone" style="width:100%">
+											
+												
+											</select>
+										
+									</div>
+								</div>
+								
+							
+							</form>
+							
+						</div> <!-- col -->
+					</div>
+					
+				
+				
+			</div> <!-- grid body -->
+
+			
+		</div>
+	</div> <br>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="grid-title">
+			  <h3>Change Delivery Person Current <span class="semi-bold">Zone</span></h3>
+			</div>
+			<div class="grid-body">
+				
+				<div class="row">
+					<div class="col-md-12 col-sm-12 col-xs-12">
+					 								  
+						<form id="change_zone_form" action="#" method="POST" novalidate="novalidate">
+						
+							
+							<input type="hidden" value = "<?php echo $apiToken; ?>" name="apitoken" id="apitoken">
+							<div class="form-group">
+								<label class="form-label">Select delivery person</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="deliveryPerson" id="deliveryPerson" style="width:100%">
+										<?php foreach($assinNewZoneDP as $assDP): ?>
+											<option value="<?php echo $assDP["id"]; ?>*<?php echo $assDP["userName"]; ?>"><?php echo $assDP["userName"]; ?></option>
+										<?php endforeach; ?>
+										
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">Select City</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									
+									<select class="init_select2_byHtml" name="selectCity" id="selectCity"style="width:100%">
+										<option value="0">Select City</option>
+										<?php foreach($getAllCityData as $key=>$allcity): ?>
+											<option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+										<?php endforeach; ?>
+
+									</select>
+									
+								</div>
+							</div>
+
+							<!-- ignore the alignment! It's ok! -->
+							<div class="form-group">
+								<label class="form-label">Default Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="defaultZone" id="defaultZone"style="width:100%">
+										<!-- Default zone is active when select City-->
+										<option value="null">Select Default Zone</option>
+									</select>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label class="form-label">Coverable Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" multiple="multiple" name="coverZone[]" id="coverZone" style="width:100%">
+										<!-- Coverabla zone is active when select City -->
+									</select>
+								</div>
+							</div>
+					  
+							
+							<div class="actions clearfix">  
+								<div class="pull-right">
+									<button type="submit" class="btn btn-primary btn-cons" id="assainDpersonZone" name="assainDpersonZone"><i class="icon-ok"></i> Assign</button>
+									<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+								</div>
+							</div>
+							
+							
+							
+						</form>
+						
+					</div> <!-- col -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

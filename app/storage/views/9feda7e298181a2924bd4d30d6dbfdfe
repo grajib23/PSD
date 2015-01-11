@@ -1,0 +1,80 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">	
+
+	<div class="page-title">	
+		<h3>List device inventory</h3>
+	</div>
+	<?php
+		echo '<pre>';
+		//print_r(json_decode($devicemonitorjson, true));
+		$deviceInventoryData = json_decode($deviceInventoryJSON, true);
+		$ListdeviceInventory = $deviceInventoryData["devices"];
+		print_r($ListdeviceInventory);
+		//die();
+		$apiToken = Session::get('apiToken');
+	    //var_dump($apiToken);
+		echo '</pre>';
+	?> 
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>All device's informations and actions</h3>
+			</div>
+			
+			<div class="grid-body">
+				<input type="hidden" value = "<?php echo $apiToken; ?>" name="apitoken" id="apitoken">
+				<table class="dt_custom bigDatatable table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Device name</th>
+							<th>Model</th>
+							<th>IMEI</th>
+							<th>Signature</th>
+							<th style="width:15%">Description</th>
+							<th>Battery</th>
+							<th>Warranty</th>
+							<th style="width:117px">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php foreach($ListdeviceInventory as $listdevice): ?>
+						<tr>
+							<td>
+								<div class="dataGroup d_stat">
+									<span class="label"><?php echo $listdevice["name"]; ?></span>
+									<span class="value <?php echo ($listdevice["status"])?'green':'red';; ?>"><i class="fa fa-circle"></i></span>
+								</div>
+							</td>
+							<td><?php echo $listdevice["model"]; ?></td>
+							<td><?php echo $listdevice["imeinumber"]; ?></td>
+							<td><?php echo $listdevice["signature"]; ?></td>
+							<td><?php echo $listdevice["description"]; ?></td>
+							<td><?php echo $listdevice["battery"]; ?></td>
+							<td><?php echo $listdevice["warranty"]; ?></td>
+							<td>
+								
+								<div class="btn-group btn-demo-space">
+									<button class="btn btn-success btn-demo-space">Action</button>
+									<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+									<ul class="dropdown-menu">
+										<li><a href="#" device-enableOrdisable="1" device-id="<?php echo $listdevice["id"]; ?>" class="enableDevice">Enable</a></li>
+										<li><a href="#" device-enableOrdisable="0" device-id="<?php echo $listdevice["id"]; ?>" class="disableDevice">Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="/editdevice">Edit</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

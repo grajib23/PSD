@@ -1,0 +1,21 @@
+{  
+    "profile":[  
+        {  
+            "userName":"resUser",
+            "firstName":null,
+            "lastName":null,
+            "email":"resusr@hnaki.com",
+            "restaurantId":"80",
+            "restaurantName":"SUB FACTORY",
+            "restaurantAddress":"Bnani"
+        }
+    ],
+    "orderDetails":{  
+        "totalOrders":1,
+        "acceptedOrders":0,
+        "rejectedOrders":1,
+        "delayDelivered":1,
+        "successfullyDelivered":0,
+        "totalSells":0
+    }
+}

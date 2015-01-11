@@ -1,0 +1,11 @@
+{
+  "messageText": "Get GCMMessageLog By Field",
+  "data": {
+    "gcmMessage": 
+      {
+        "filedName" : "id",
+        "filedValue": 2
+      }
+  },
+  "serviceUser":"WebApp"
+}

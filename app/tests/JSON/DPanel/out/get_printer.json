@@ -1,0 +1,10 @@
+{
+    "messageText":"Get Printer By Field",
+	"serviceUser":"WebApp",
+	"data": {
+		"printerInfo": {
+			"filedName":"status",
+			"filedValue":1
+		}
+	}
+}

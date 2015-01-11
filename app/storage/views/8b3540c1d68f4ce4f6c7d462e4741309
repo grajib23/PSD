@@ -1,0 +1,178 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">
+		
+	<div class="page-title">	
+		<h3>Add New device</h3>
+	</div>
+	<?php
+		echo'<pre>'; 
+		$getAllCityData = json_decode($getAllCityJSON, true);
+		$getAllAreaData = json_decode($getAllAreaJSON,true);
+		$enterArea = $getAllAreaData["Dhaka"]["zones"][0]["areas"];
+		print_r($enterArea);
+		//die();
+	   	echo'</pre>';
+	    $apiToken = Session::get('apiToken');
+	    var_dump($apiToken);
+	?>
+	<script>
+		var cityZones = <?=$getAllCityJSON?>;
+	</script>
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>Add <span class="semi-bold">New Device</span></h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<form id="save_device_form" action="" method="POST" novalidate="novalidate">
+				  
+					  
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+						  
+						  <input type="hidden" value = "<?php echo $apiToken; ?>" name="apitoken" id="apitoken">
+
+						  <div class="form-group">
+							<label class="form-label">Device Name</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="deviceName" id="deviceName">
+							</div>
+						  </div>
+						  
+						  <div class="form-group">
+							<label class="form-label">Device Model</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="deviceModel" id="deviceModel">
+							</div>
+						  </div>
+						  	<div class="form-group">
+								<label class="form-label">Device Type</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									
+									<select class="init_select2_byHtml" name="deviceType" id="deviceType"style="width:100%">
+								
+											<option value="MOB">Mobile</option>
+											<option value="TAB">Tablet</option>
+										
+									</select>
+									
+								</div>
+							</div>
+						  <div class="form-group">
+							<label class="form-label">Device IMEI Number</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="deviceIMEI" id="deviceIMEI">
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Device Signature</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="deviceSignature" id="deviceSignature" placeholder="Auto generated">  <!--For Input Disable(disabled="disabled")-->
+							</div>
+						  </div>
+						  
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Device Description</label>
+							<div class="controls">
+								<textarea name="deviceDesc" id="deviceDesc" placeholder="Type all descriptions here ..." class="span12 custom-editor form-control" rows="10"></textarea>
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Battery</label>
+							<span class="help">e.g. "2000mA"</span>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<input type="text" class="form-control" name="battery" id="battery">
+							</div>
+						  </div>
+						  
+						  
+						  <div class="form-group">
+							<label class="form-label">Warranty till</label>
+							<div class="input-with-icon right">                                       
+								<i class=""></i>
+								<div class="input-append success date">
+									<input type="text" class="span12" name="warrenty" id="warrenty">
+									<span class="add-on"><span class="arrow"></span><i class="fa fa-th"></i></span> 
+								</div>
+							</div>
+						  </div>
+						  	
+						  <div class="form-group">
+								<label class="form-label">Select City</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									
+									<select class="init_select2_byHtml" name="selectCity" id="selectCity"style="width:100%">
+										<option value="Null">Select City</option>
+										<?php foreach($getAllCityData as $key=>$allcity): ?>
+											<option value="<?php echo $key; ?>"><?php echo $key; ?></option>
+										<?php endforeach; ?>
+
+									</select>
+									
+								</div>
+							</div>
+
+							<!-- ignore the alignment! It's ok! -->
+							<div class="form-group">
+								<label class="form-label">Default Zone</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="defaultZone" id="defaultZone"style="width:100%">
+										<!-- Default zone is active when select City-->
+										<option value="0">Select Default Zone</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">Area</label>
+								<span class="help"></span>
+								<div class="input-with-icon right">                                       
+									<i class=""></i>
+									<select class="init_select2_byHtml" name="area" id="area"style="width:100%">
+										<!-- Default zone is active when select City-->
+										<option value="Null">Select Area</option>
+										<?php foreach($enterArea as $allArea): ?>
+											<option value="<?php echo $allArea["id"]; ?>*<?php echo $allArea["name"]; ?>"><?php echo $allArea["name"]; ?></option>
+										<?php endforeach; ?>
+									</select>
+								</div>
+							</div>
+		
+			
+						  
+							<div class="actions clearfix">  
+								<div class="pull-right">
+									<a href="#"><button type="submit" id="addNewDevice" name="addNewDevice"class="btn btn-primary btn-cons"><i class="icon-ok"></i> Save</button></a>
+									<button type="button" class="btn btn-danger btn-cons reset">Cancel</button>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</form>		
+			</div>
+			
+		</div>
+	</div>
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

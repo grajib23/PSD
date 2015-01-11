@@ -1,0 +1,99 @@
+<?php $__env->startSection('bodycontent'); ?>
+<div class="grid simple">	
+
+	<div class="page-title">	
+		<h3>List device inventory</h3>
+	</div>
+	
+	<div class="row">
+		<div class="col-md-12">
+		
+			<div class="grid-title">
+			  <h3>All device's informations and actions</h3>
+			</div>
+			
+			<div class="grid-body">
+				
+				<table class="dt_custom bigDatatable table table-hover table-condensed">
+					<thead>
+						<tr>
+							<th>Device name</th>
+							<th>Model</th>
+							<th>IMEI</th>
+							<th>Signature</th>
+							<th style="width:15%">Description</th>
+							<th>Battery</th>
+							<th>Warranty</th>
+							<th style="width:117px">Action</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<div class="dataGroup d_stat">
+									<span class="label">Walton</span>
+									<span class="value red"><i class="fa fa-circle"></i></span>
+								</div>
+							</td>
+							<td>Z2</td>
+							<td>012345678912345</td>
+							<td>v345v79qbctyv09356</td>
+							<td>Awesome mobile bragging by marketer's of walton</td>
+							<td>Li-ion</td>
+							<td>2 year(s)</td>
+							<td>
+								
+								<div class="btn-group btn-demo-space">
+									<button class="btn btn-success btn-demo-space">Action</button>
+									<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Enable</a></li>
+										<li><a href="#">Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Edit</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						
+						<tr>
+							<td>
+								<div class="dataGroup d_stat">
+									<span class="label">Walton</span>
+									<span class="value green"><i class="fa fa-circle"></i></span>
+								</div>
+							</td>
+							<td>N1 X</td>
+							<td>452345672342345</td>
+							<td>45v79qbctyv09356</td>
+							<td>Walton is better than Symphony</td>
+							<td>Li-ion</td>
+							<td>2 year(s)</td>
+							<td>
+								
+								<div class="btn-group btn-demo-space">
+									<button class="btn btn-success btn-demo-space">Action</button>
+									<button class="btn btn-success dropdown-toggle btn-demo-space" data-toggle="dropdown"> <span class="caret"></span> </button>
+									<ul class="dropdown-menu">
+										<li><a href="#">Enable</a></li>
+										<li><a href="#">Disable</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Edit</a></li>
+									</ul>
+								</div>
+							</td>
+						</tr>
+						
+						
+						
+					</tbody>
+				</table>
+				
+			</div>
+			
+		</div>
+	</div>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
