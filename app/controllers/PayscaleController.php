@@ -6,14 +6,14 @@ class PayscaleController extends \BaseController {
     {
         $result=PayScale::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            PayScale::create(Input::get());
+            PayScale::create(Input::json()->all());
             return Response::json(["messgae"=>'PayScale created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class PayscaleController extends \BaseController {
     {
         $result=PayScale::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class PayscaleController extends \BaseController {
         try{
             $result=PayScale::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'PayScale updated'],200);
             }

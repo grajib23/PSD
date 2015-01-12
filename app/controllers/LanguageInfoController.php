@@ -7,14 +7,14 @@ class LanguageInfoController extends \BaseController {
         $result=PersonalInfo::find($empId);
         if($result) {
             $result=$result->languages;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            LanguageInfo::create(Input::get());
+            LanguageInfo::create(Input::json()->all());
             return Response::json(["messgae"=>'LanguageInfo created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +26,7 @@ class LanguageInfoController extends \BaseController {
     {
         $result=LanguageInfo::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +36,7 @@ class LanguageInfoController extends \BaseController {
         try{
             $result=LanguageInfo::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'LanguageInfo updated'],200);
             }

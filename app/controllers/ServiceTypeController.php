@@ -6,14 +6,14 @@ class ServiceTypeController extends \BaseController {
     {
         $result=ServiceType::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            ServiceType::create(Input::get());
+            ServiceType::create(Input::json()->all());
             return Response::json(["messgae"=>'ServiceType created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class ServiceTypeController extends \BaseController {
     {
         $result=ServiceType::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class ServiceTypeController extends \BaseController {
         try{
             $result=ServiceType::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'ServiceType updated'],200);
             }

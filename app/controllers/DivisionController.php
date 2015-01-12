@@ -7,7 +7,7 @@ class DivisionController extends \BaseController {
         $result=Country::find($id);
         if($result) {
             $result = $result->divisions;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
 
@@ -16,7 +16,7 @@ class DivisionController extends \BaseController {
     public function store($id)
     {
         try{
-            Division::create(Input::get());
+            Division::create(Input::json()->all());
             return Response::json(["messgae"=>'Division created'],200);
         }
         catch(\Exception $e){
@@ -30,7 +30,7 @@ class DivisionController extends \BaseController {
     {
         $result=Division::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -40,7 +40,7 @@ class DivisionController extends \BaseController {
         try{
             $division=Division::find($id);
             if($division) {
-                $division->fill(Input::get());
+                $division->fill(Input::json()->all());
                 $division->update();
                 return Response::json(["messgae" => 'Division updated'], 200);
             }

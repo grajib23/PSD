@@ -30,7 +30,7 @@ class DivisionObserver {
         $validator= $this->isValid();
         if ($validator->fails())
         {
-            throw  new \Exception($messages = $validator->messages());
+            throw  new \Exception( $validator->messages() );
         }
     }
     public function updating($model)
@@ -39,7 +39,7 @@ class DivisionObserver {
         $validator= $this->isValid();
         if ($validator->fails())
         {
-            throw  new \Exception($messages = $validator->messages());
+            throw  new \Exception( $validator->messages() );
         }
 
     }

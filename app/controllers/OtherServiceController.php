@@ -7,14 +7,14 @@ class OtherServiceController extends \BaseController {
         $result=PersonalInfo::find($empId);
         if($result) {
             $result=$result->otherservices;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            OtherService::create(Input::get());
+            OtherService::create(Input::json()->all());
             return Response::json(["messgae"=>'OtherService created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +26,7 @@ class OtherServiceController extends \BaseController {
     {
         $result=OtherService::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +36,7 @@ class OtherServiceController extends \BaseController {
         try{
             $result=OtherService::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'OtherService updated'],200);
             }

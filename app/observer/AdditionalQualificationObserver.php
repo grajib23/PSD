@@ -12,7 +12,7 @@ class AdditionalQualificationObserver
         return \Validator::make(
             $this->model->toArray(),
             array(
-                'name' => 'required|max:100|unique:additionalqualification'
+                'name' => 'required|max:100|unique:additionalqualifications'
             )
         );
     }

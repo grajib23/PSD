@@ -7,14 +7,14 @@ class DiscplinaryActionController extends \BaseController {
         $result=PersonalInfo::find($empId);
         if($result) {
             $result=$result->discplinaryactions;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            DiscplinaryAction::create(Input::get());
+            DiscplinaryAction::create(Input::json()->all());
             return Response::json(["messgae"=>'DiscplinaryAction created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +26,7 @@ class DiscplinaryActionController extends \BaseController {
     {
         $result=DiscplinaryAction::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +36,7 @@ class DiscplinaryActionController extends \BaseController {
         try{
             $result=DiscplinaryAction::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'DiscplinaryAction updated'],200);
             }

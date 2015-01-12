@@ -5,14 +5,14 @@ class DiciplineStatusController extends \BaseController{
     {
         $result=DiciplineStatus::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            DiciplineStatus::create(Input::get());
+            DiciplineStatus::create( Input::json()->all() );
             return Response::json(["messgae"=>'DiciplineStatus created'],200);
         }
         catch(\Exception $e){
@@ -24,7 +24,7 @@ class DiciplineStatusController extends \BaseController{
     {
         $result=DiciplineStatus::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json( $result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -34,7 +34,7 @@ class DiciplineStatusController extends \BaseController{
         try{
             $result=DiciplineStatus::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill( Input::json()->all() );
                 $result->update();
                 return Response::json(["messgae"=>'DiciplineStatus updated'],200);
             }

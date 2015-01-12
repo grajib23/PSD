@@ -11,7 +11,7 @@ class RankObserver{
         return \Validator::make(
             $this->model->toArray(),
             array(
-                'title'		 => 'required|max:30|unique:ranks'
+                'title'	=> 'required|max:30|unique:ranks'
             )
         );
     }

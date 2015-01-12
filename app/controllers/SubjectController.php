@@ -6,14 +6,14 @@ class SubjectController extends \BaseController {
     {
         $result=Subject::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            Subject::create(Input::get());
+            Subject::create(Input::json()->all());
             return Response::json(["messgae"=>'Subject created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class SubjectController extends \BaseController {
     {
         $result=Subject::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class SubjectController extends \BaseController {
         try{
             $result=Subject::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'Subject updated'],200);
             }

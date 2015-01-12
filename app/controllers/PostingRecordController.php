@@ -7,14 +7,14 @@ class PostingRecordController extends \BaseController {
         $result=PersonalInfo::find($empId);
         if($result) {
             $result=$result->postingrecords;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            PostingRecord::create(Input::get());
+            PostingRecord::create(Input::json()->all());
             return Response::json(["messgae"=>'PostingRecord created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +26,7 @@ class PostingRecordController extends \BaseController {
     {
         $result=PostingRecord::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +36,7 @@ class PostingRecordController extends \BaseController {
         try{
             $result=PostingRecord::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'PostingRecord updated'],200);
             }

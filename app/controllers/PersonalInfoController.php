@@ -7,7 +7,7 @@ class PersonalInfoController extends \BaseController {
         $result=User::find($id);
         if($result) {
             $result=$result->personalInfo;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -15,7 +15,7 @@ class PersonalInfoController extends \BaseController {
     public function store($id)
     {
         try{
-            PersonalInfo::create(Input::get());
+            PersonalInfo::create( Input::json()->all() );
             return Response::json(["messgae"=>'PersonalInfo created'],200);
         }
         catch(\Exception $e){
@@ -30,7 +30,7 @@ class PersonalInfoController extends \BaseController {
     {
         $result=PersonalInfo::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
 
@@ -42,7 +42,7 @@ class PersonalInfoController extends \BaseController {
         try{
             $result=PersonalInfo::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill( Input::json()->all() );
                 $result->update();
                 return Response::json(["messgae"=>'PersonalInfo updated'],200);
             }
