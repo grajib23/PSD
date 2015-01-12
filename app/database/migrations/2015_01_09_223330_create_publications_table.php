@@ -28,7 +28,7 @@ class CreatePublicationsTable extends Migration {
 				->onDelete('cascade');
 			$table->foreign('pub_type_id')
 				->references('id')
-				->on('postingtypes')
+				->on('publicationtypes')
 				->onDelete('cascade');
 		});
 	}

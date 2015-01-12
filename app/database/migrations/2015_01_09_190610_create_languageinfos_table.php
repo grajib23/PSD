@@ -16,6 +16,7 @@ class CreateLanguageinfosTable extends Migration {
 		{
 			$table->increments('id');
 			$table->string('govt_id',20);
+			$table->string('language_skill',30);
 			$table->boolean('read');
 			$table->boolean('write');
 			$table->boolean('speak');

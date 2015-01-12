@@ -13,13 +13,16 @@ class PostingAbrodController extends \BaseController {
     }
     public function store()
     {
-        try{
-            PostingAbrod::create(Input::json()->all());
-            return Response::json(["messgae"=>'PostingAbrod created'],200);
+        $inputs = Input::json()->all();
+        foreach ($inputs as $key => $value ) {
+            try{
+            PostingAbrod::create( $value );
+            }
+            catch(\Exception $e){
+                return Response::json(["messgae"=>$e->getMessage()],404);
+            }
         }
-        catch(\Exception $e){
-            return Response::json(["messgae"=>$e->getMessage()],404);
-        }
+        return Response::json(["messgae"=>'PostingAbrod created'],200);
     }
 
     public function show($empId,$id)

@@ -13,13 +13,16 @@ class PowerInfoController extends \BaseController {
     }
     public function store()
     {
-        try{
-            PowerInfo::create(Input::json()->all());
-            return Response::json(["messgae"=>'PowerInfo created'],200);
+        $inputs = Input::json()->all();
+        foreach ($inputs as $key => $value ) {
+            try{
+              PowerInfo::create( $value );
+            }
+            catch(\Exception $e){
+                return Response::json(["messgae"=>$e->getMessage()],404);
+            }
         }
-        catch(\Exception $e){
-            return Response::json(["messgae"=>$e->getMessage()],404);
-        }
+        return Response::json(["messgae"=>'PowerInfo created'],200);
     }
 
     public function show($empId,$id)

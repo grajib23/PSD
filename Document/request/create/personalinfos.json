@@ -1,0 +1,11 @@
+{
+  "user_id":"2",
+  "govt_id":"123",
+  "name_in_bangla":"ABC",
+  "name_in_english":"ABC",
+  "location":"Dhaka",
+  "gender":"male",
+  "fname_in_bangla":"fname_in_bangla",
+  "mname_in_bangla":"mname_in_bangla",
+  "workfield_option":"workfield_option"
+}

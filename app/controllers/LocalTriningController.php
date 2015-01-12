@@ -13,13 +13,17 @@ class LocalTriningController extends \BaseController {
     }
     public function store()
     {
-        try{
-            LocalTrining::create(Input::json()->all());
-            return Response::json(["messgae"=>'LocalTrining created'],200);
+        $inputs = Input::json()->all();
+        foreach ($inputs as $key => $value) {
+            try{
+                 LocalTrining::create( $value );
+            }
+            catch(\Exception $e){
+                return Response::json(["messgae"=>$e->getMessage()],404);
+            }
         }
-        catch(\Exception $e){
-            return Response::json(["messgae"=>$e->getMessage()],404);
-        }
+        return Response::json(["messgae"=>'LocalTrining created'],200);
+        
     }
 
     public function show($empId,$id)

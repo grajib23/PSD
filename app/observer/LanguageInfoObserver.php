@@ -11,7 +11,8 @@ class LanguageInfoObserver {
         return \Validator::make(
             $this->model->toArray(),
             array(
-                'govt_id'		 => 'required|max:20'
+                'govt_id'          => 'required|max:20',
+                'language_skill'   => 'required|max:30',
             )
         );
     }
