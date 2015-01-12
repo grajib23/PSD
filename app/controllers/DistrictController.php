@@ -18,12 +18,14 @@ class DistrictController extends \BaseController {
        
         
         try{
-            $district = new District( Input::json()->all() );
+            /*$district = new District( Input::json()->all() );
             $division = Division::find($divisionId);
             if( $division ){
                 $division->districts()->save($district);
                 return Response::json(["messgae"=>'District created'],200);
-            }
+            }*/
+            District::create(Input::json()->all());
+            return Response::json(["messgae"=>'District created'],200);
         }
         catch(\Exception $e){
             return Response::json(["messgae"=>$e->getMessage()],404);
@@ -56,7 +58,7 @@ class DistrictController extends \BaseController {
                 }
                  
                 //$result->update();
-                //return Response::json(["messgae" => 'District updated'], 200);
+                return Response::json(["messgae" => 'District updated'], 200);
             }else{
                 return Response::json(["messgae"=>'not found'],404);
             }
