@@ -1,0 +1,21 @@
+  [
+    {
+       "govt_id":"2",
+       "dis_cat_id":"1",
+       "dis_status_id":"1",
+       "description":"description",
+       "judgment":"judgment",
+       "final_judgment":"final_judgment",
+       "remarks":"remarks"
+    },
+    {
+       "govt_id":"2",
+       "dis_cat_id":"1",
+       "dis_status_id":"1",
+       "description":"description",
+       "judgment":"judgment",
+       "final_judgment":"final_judgment",
+       "remarks":"remarks"
+    }
+    
+  ]
