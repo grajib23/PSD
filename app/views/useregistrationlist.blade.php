@@ -28,11 +28,11 @@
             <tbody>
                 @foreach($userListData as $userList)
                     <tr>
-                        <td>{{$userList["user_name"]}}</td>
-                        <td>{{$userList["user_email"]}}</td>
+                        <td>{{$userList["username"]}}</td>
+                        <td>{{$userList["email"]}}</td>
                         <td>{{$userList["user_role"]}}</td>
-                        <td>{{$userList["user_phone"]}}</td>
-                        <td>{{$userList["user_national_id"]}}</td>
+                        <td>{{$userList["phone"]}}</td>
+                        <td>{{$userList["national_id"]}}</td>
                         <td>
                             <span class="btn-group">
                                 <a href="#" class="btn btn-small"><i class="icon-search"></i></a>

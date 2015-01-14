@@ -1,8 +1,10 @@
+ 
 <?php
+
 
 class RankController extends \BaseController {
 
-	public function index()
+	public static function index()
 	{
 		$result=Rank::get();
 		if($result) {

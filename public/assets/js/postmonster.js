@@ -15,37 +15,96 @@ $('form.verticalDashboard [name="submit-btn"]').click(function(e){
             "is_active":"1"
         }
     };
+
+    postRegistrationData.data.username = userName;
+    postRegistrationData.data.email = email;
+    postRegistrationData.data.phone = phoneNum;
+    postRegistrationData.data.national_id = nationalId;
+    postRegistrationData.data.password = password;
     postRegistrationData.data.user_role = role;
-    postRegistrationData.data.user_name = userName;
-    postRegistrationData.data.user_email = email;
-    postRegistrationData.data.user_phone = phoneNum;
-    postRegistrationData.data.user_national_id = nationalId;
-    postRegistrationData.data.user_pass = password;
 
     postRegistrationData = JSON.stringify( postRegistrationData );
 
     console.log(postRegistrationData);
+
     $.ajax({
         type: "post",
-        url: '/registation',
+        url: 'users',
         data: {
                 'data':postRegistrationData
               },
         success: function( data ){
             //data = JSON.parse( data );
-            
+
             if(data.hasOwnProperty("error") && data.error === true ){
                 console.log('Error');
+
             }
             else{
                 console.log('Success');
 
                 window.location = "/registration";
 
+
             }
-            alert( data.message );
-            console.log(data);
+            //alert( data.message );
+            //console.log(data);
         }
     });
 
-});  
+});
+
+
+
+// $('.mws-button-row button:contains("Next")')
+
+$('form.autoAJAX .mws-button-row button:contains("Next")').click(function(e){
+    //console.log('auto');
+    var thisForm = $(this).closest('form');
+    var data = getCurrentInputs();
+
+
+    var validated = thisForm.validate({ onsubmit: false }).form();
+    if(!validated){
+        console.log('Not validated inputs. No AJAX call made... :)');
+        return;
+    }
+
+    $.ajax({
+        type: "POST",
+        url: data.postUrl,
+        data: data.serializedData,
+        success:function(data, abc){
+            console.log(data);
+            console.log(abc);
+
+        }
+    });
+
+});
+
+
+
+
+//input submit logoic js
+function getCurrentInputs(){
+    var currentIndex = $('.wizard-nav li.current').index();
+    var currentFieldsets = $('.mws-form fieldset:nth('+currentIndex+')');
+    var currentFieldsData = currentFieldsets.serialize();
+    var postUrl = currentFieldsets.find('input[name="posturl"]').val();
+
+    return { 'serializedData':currentFieldsData, 'postUrl':postUrl };
+}
+//bundle post
+//Usage: toObject(getCurrentInputs())
+function toObject(arr){
+    var obj={},i;
+    for(i=0;i<arr.length;++i){
+        if(arr[i]!==undefined){
+            obj[arr[i].name]=arr[i].value;
+        }
+    }
+    return obj;
+}
+
+

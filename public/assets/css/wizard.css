@@ -152,6 +152,7 @@
 {
     position: absolute;
     width: 180px;
+    overflow: scroll;
     left: 0;
     top: 0;
     bottom: 0;

@@ -11,7 +11,7 @@
 ================================================== */
 
 #mws-header {
-    background: url(../../images/core/mws-header-bg.png) repeat-x left bottom;
+    /*background: url(../../images/core/mws-header-bg.png) repeat-x left bottom;*/
     border-bottom: 4px solid;
     z-index: 100;
     position: relative;
@@ -25,7 +25,7 @@
     
 #mws-logo-container {
     width: 180px;
-    height: 58px;
+    height: 100px;
     float: left;
     padding: 0 10px;
 }
@@ -40,7 +40,7 @@
 
 #mws-logo-container #mws-logo-wrap img {
     max-width: 180px;
-    max-height: 58px;
+    max-height: 102px;
 }
     
 /* User Toolbar

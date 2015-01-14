@@ -3,12 +3,12 @@
 namespace frontendcontroller;
 use BaseController;
 use View;
-use HnakiHelpers;
+use PSD\PubHelpers;
 
 class UserlistController extends BaseController{
   
     public function registrationlistmodule() {
-    	$userListJSON = HnakiHelpers::index();
+    	$userListJSON = \UserController::index();
       return View::make('useregistrationlist')
       	->with('userListJSON',$userListJSON);
     }

@@ -2,7 +2,7 @@
 
 class UserController extends \BaseController {
 
-    public function index()
+    public static function index()
     {
         $result=User::get();
         if($result) {

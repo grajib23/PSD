@@ -22,7 +22,8 @@
 			"app/tests/TestCase.php"
 		],
 		 "psr-4":{
-            "observer\\":"app/Observer"
+            "observer\\":"app/Observer",
+            "PSD\\":"app"
         }
 	},
 	"scripts": {

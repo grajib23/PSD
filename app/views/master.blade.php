@@ -25,6 +25,7 @@
       {{ HTML::style('/assets/css/mws-theme.css')}}
       {{ HTML::style('/assets/css/themer.css')}}
       {{ HTML::style('/assets/css/select2.css')}}
+
       <!-- END CORE CSS FRAMEWORK -->
    </head>
    <!-- END HEAD -->
@@ -353,5 +354,7 @@
       {{ HTML::script('/assets/js/themer.js') }}
       {{ HTML::script('/assets/js/sorkarikormocari.js') }}
       {{ HTML::script('/assets/js/postmonster.js')}}
+
    </body>
+
 </html>
