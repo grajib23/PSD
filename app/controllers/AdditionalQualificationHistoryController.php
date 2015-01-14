@@ -7,14 +7,14 @@ class AdditionalQualificationHistoryController extends \BaseController {
         $result=PersonalInfo::find($empId);
         if($result) {
             $result=$result->additionalQualificationHistory;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            AdditionalQualificationHistory::create(Input::get());
+            AdditionalQualificationHistory::create( Input::json()->all() );
             return Response::json(["messgae"=>'AdditionalQualificationHistory created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +26,7 @@ class AdditionalQualificationHistoryController extends \BaseController {
     {
         $result=AdditionalQualificationHistory::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +36,7 @@ class AdditionalQualificationHistoryController extends \BaseController {
         try{
             $result=AdditionalQualificationHistory::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill( Input::json()->all() );
                 $result->update();
                 return Response::json(["messgae"=>'EduQualification updated'],200);
             }

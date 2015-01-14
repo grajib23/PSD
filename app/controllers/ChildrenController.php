@@ -7,14 +7,14 @@ class ChildrenController extends \BaseController {
         $result=PersonalInfo::find($empId);
         if($result) {
             $result=$result->childrens;
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            Children::create(Input::get());
+            Children::create(Input::json()->all());
             return Response::json(["messgae"=>'Children  Info created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +26,7 @@ class ChildrenController extends \BaseController {
     {
         $result=Children::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +36,7 @@ class ChildrenController extends \BaseController {
         try{
             $result=Children::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'ChilInfo updated'],200);
             }

@@ -1,0 +1,11 @@
+  {
+    "institution_name":"institution_name",
+     "govt_id":"2",
+     "subject_id":"1",
+     "degree_id":"1",
+     "result":"3.25",
+     "passing_year":"2010",
+     "gpa":"3.5",
+     "distinction":"distinction",
+      "is_active":"0"
+  }

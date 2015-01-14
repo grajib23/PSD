@@ -56,7 +56,7 @@ Route::resource('/rank','Rank',[
 ]);
 Route::resource('posting_type','PostingController');
 
-Route::resource('cadre','CardeController');
+Route::resource('cadre','CadreController');
 
 Route::get('address-all','AddressController@index');
 

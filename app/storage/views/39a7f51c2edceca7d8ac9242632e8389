@@ -1,12 +1,10 @@
 <?php $__env->startSection('bodycontent'); ?>
 <?php
-    echo '<pre>';
+    //echo '<pre>';
          $userListData = json_decode($userListJSON, true);
-
-         //$deliveryPersons = $dashboardData["deliveryPersons"];
-         
          //print_r($userListData);
-    echo '</pre>';
+         //die();
+    //echo '</pre>';
 ?>
 <div class="mws-panel grid_8 mws-collapsible">
     <div class="mws-panel-header">
@@ -27,11 +25,11 @@
             <tbody>
                 <?php foreach($userListData as $userList): ?>
                     <tr>
-                        <td><?php echo $userList["user_name"]; ?></td>
-                        <td><?php echo $userList["user_email"]; ?></td>
+                        <td><?php echo $userList["username"]; ?></td>
+                        <td><?php echo $userList["email"]; ?></td>
                         <td><?php echo $userList["user_role"]; ?></td>
-                        <td><?php echo $userList["user_phone"]; ?></td>
-                        <td><?php echo $userList["user_national_id"]; ?></td>
+                        <td><?php echo $userList["phone"]; ?></td>
+                        <td><?php echo $userList["national_id"]; ?></td>
                         <td>
                             <span class="btn-group">
                                 <a href="#" class="btn btn-small"><i class="icon-search"></i></a>

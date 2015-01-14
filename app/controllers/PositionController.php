@@ -6,14 +6,14 @@ class PositionController extends \BaseController {
     {
         $result=Position::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            Position::create(Input::get());
+            Position::create(Input::json()->all());
             return Response::json(["messgae"=>'Position created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class PositionController extends \BaseController {
     {
         $result=Position::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class PositionController extends \BaseController {
         try{
             $result=Position::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'Position updated'],200);
             }

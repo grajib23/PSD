@@ -1,13 +1,11 @@
 @extends('master')
 @section('bodycontent')
 <?php
-    echo '<pre>';
+    //echo '<pre>';
          $userListData = json_decode($userListJSON, true);
-
-         //$deliveryPersons = $dashboardData["deliveryPersons"];
-         
          //print_r($userListData);
-    echo '</pre>';
+         //die();
+    //echo '</pre>';
 ?>
 <div class="mws-panel grid_8 mws-collapsible">
     <div class="mws-panel-header">

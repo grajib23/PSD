@@ -1,0 +1,17 @@
+[  
+   {  
+      "id":"1",
+      "name":"name",
+      "is_active":"0"
+   },
+   {  
+      "id":"2",
+      "name":"test",
+      "is_active":"0"
+   },
+   {  
+      "id":"3",
+      "name":"test2",
+      "is_active":"0"
+   }
+]

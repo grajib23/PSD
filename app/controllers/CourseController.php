@@ -6,14 +6,14 @@ class CourseController extends \BaseController {
     {
         $result=Course::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json( $result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            Course::create(Input::get());
+            Course::create( Input::json()->all() );
             return Response::json(["messgae"=>'Course created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class CourseController extends \BaseController {
     {
         $result=Course::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json( $result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class CourseController extends \BaseController {
         try{
             $result=Course::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill( Input::json()->all() );
                 $result->update();
                 return Response::json(["messgae"=>'Course updated'],200);
             }

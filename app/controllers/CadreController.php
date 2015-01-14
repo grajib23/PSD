@@ -5,14 +5,14 @@ class CadreController extends \BaseController {
 	{
 		$result=Cadre::get();
 		if($result) {
-			return Response::json(["data" => $result], 200);
+			return Response::json($result, 200);
 		}
 		return Response::json(["messgae"=>'not found'],404);
 	}
 	public function store()
 	{
 		try{
-			Cadre::create(Input::get());
+			Cadre::create( Input::json()->all() );
 			return Response::json(["messgae"=>'Cadre created'],200);
 		}
 		catch(\Exception $e){
@@ -24,7 +24,7 @@ class CadreController extends \BaseController {
 	{
 		$result=Cadre::find($id);
 		if($result) {
-			return Response::json(["data" => $result], 200);
+			return Response::json($result, 200);
 		}
 		return Response::json(["messgae"=>'not found'],404);
 	}
@@ -34,7 +34,7 @@ class CadreController extends \BaseController {
 		try{
 			$result=Cadre::find($id);
 			if($result){
-				$result->fill(Input::get());
+				$result->fill( Input::json()->all() );
 				$result->update();
 				return Response::json(["messgae"=>'Cadre updated'],200);
 			}

@@ -4,8 +4,7 @@
 class AddressController extends \BaseController {
 
 
-	public static function index(){
-
+	public function index(){
 		$response = new stdClass();
 		$divisionArray = array();
 		$country = Country::find(1);

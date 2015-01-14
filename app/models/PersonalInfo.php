@@ -22,7 +22,7 @@ class PersonalInfo extends Eloquent {
     }
     public function permanetAddress(){
 
-        return $this->belongsTo('address');
+        return $this->belongsTo('Address');
     }
     public function presentAddress(){
 

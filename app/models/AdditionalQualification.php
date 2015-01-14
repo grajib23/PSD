@@ -3,7 +3,7 @@ use observer\AdditionalQualificationObserver;
 use Illuminate\Events\Dispatcher;
 class AdditionalQualification extends Eloquent  {
 
-    protected $table = 'additionalqualification';
+    protected $table = 'additionalqualifications';
     protected $guarded = array('id','created_at','updated_at','deleted_at');
     protected $hidden = array('created_at','updated_at','deleted_at');
     /* public function divisions(){

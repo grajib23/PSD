@@ -8,14 +8,14 @@ class PermanentAddressController extends \BaseController {
         if($result) {
             $permanet_add_id=$result->permanet_add_id;
             $result=Address::find($permanet_add_id);
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store($empId)
     {
         try{
-           $address= Address::create(Input::get());
+           $address= Address::create( Input::json()->all() );
             $result=PersonalInfo::find($empId);
 
             $result->permanet_add_id=$address->id;
@@ -32,7 +32,7 @@ class PermanentAddressController extends \BaseController {
     {
         $result=Address::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -42,7 +42,7 @@ class PermanentAddressController extends \BaseController {
         try{
             $result=Address::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'PermanentAddress updated'],200);
             }

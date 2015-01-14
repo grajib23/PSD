@@ -1,0 +1,25 @@
+  [
+    {
+       "govt_id":"2",
+       "course_id":"1",
+       "institution_name":"institution_name",
+       "period_form":"2015-01-12",
+       "period_to":"2015-01-12",
+       "grade":"3.5",
+       "position":"position",
+       "location":"location",
+       "is_active":"1"
+    },
+    {
+       "govt_id":"2",
+       "course_id":"1",
+       "institution_name":"institution_name",
+       "period_form":"2015-01-12",
+       "period_to":"2015-01-12",
+       "grade":"3.5",
+       "position":"position",
+       "location":"location",
+       "is_active":"1"
+    }
+    
+  ]

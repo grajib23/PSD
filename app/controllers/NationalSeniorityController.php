@@ -6,15 +6,14 @@ class NationalSeniorityController extends \BaseController {
     {
         $result=NationalSeniority::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            //dd(Input::get());
-            NationalSeniority::create(Input::get());
+            NationalSeniority::create( Input::json()->all() );
             return Response::json(["messgae"=>'NationalSeniority created'],200);
         }
         catch(\Exception $e){
@@ -26,7 +25,7 @@ class NationalSeniorityController extends \BaseController {
     {
         $result=NationalSeniority::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json( $result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -36,7 +35,7 @@ class NationalSeniorityController extends \BaseController {
         try{
             $result=NationalSeniority::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill( Input::josn()->all() );
                 $result->update();
                 return Response::json(["messgae"=>'NationalSeniority updated'],200);
             }

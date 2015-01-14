@@ -12,7 +12,7 @@ class CountryObserver {
         return \Validator::make(
             $this->model->toArray(),
             array(
-                'name'		 => 'required|max:30|unique:countries'
+                'name'	=> 'required|max:30|unique:countries'
             )
         );
     }

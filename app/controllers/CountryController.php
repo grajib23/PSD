@@ -7,7 +7,7 @@ class CountryController extends \BaseController {
 	{
 		$result=Country::get();
 		if($result) {
-			return Response::json(["data" => $result], 200);
+			return Response::json($result, 200);
 		}
 		return Response::json(["messgae"=>'not found'],404);
 	}
@@ -15,7 +15,7 @@ class CountryController extends \BaseController {
 	public function store()
 	{
 		try{
-			Country::create(Input::get());
+			Country::create(Input::json()->all());
 			return Response::json(["messgae"=>'country created'],200);
 		}
 		catch(\Exception $e){
@@ -30,7 +30,7 @@ class CountryController extends \BaseController {
 	{
 		$result=Country::find($id);
 		if($result) {
-			return Response::json(["data" => $result], 200);
+			return Response::json($result, 200);
 		}
 		return Response::json(["messgae"=>'not found'],404);
 
@@ -42,7 +42,7 @@ class CountryController extends \BaseController {
 		try{
 			$country=Country::find($id);
 			if($country){
-				$country->fill(Input::get());
+				$country->fill(Input::json()->all());
 				$country->update();
 				return Response::json(["messgae"=>'country updated'],200);
 			}

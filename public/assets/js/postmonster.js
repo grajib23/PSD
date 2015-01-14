@@ -10,18 +10,15 @@ $('form.verticalDashboard [name="submit-btn"]').click(function(e){
     var password    = $("#password").val();
 
     var postRegistrationData = {
-        "data": {
-            "is_confirm":"1",
-            "is_active":"1"
-        }
+        
     };
 
-    postRegistrationData.data.username = userName;
-    postRegistrationData.data.email = email;
-    postRegistrationData.data.phone = phoneNum;
-    postRegistrationData.data.national_id = nationalId;
-    postRegistrationData.data.password = password;
-    postRegistrationData.data.user_role = role;
+    postRegistrationData.username = userName;
+    postRegistrationData.email = email;
+    postRegistrationData.phone = phoneNum;
+    postRegistrationData.national_id = nationalId;
+    postRegistrationData.password = password;
+    postRegistrationData.user_role = role;
 
     postRegistrationData = JSON.stringify( postRegistrationData );
 
@@ -30,12 +27,10 @@ $('form.verticalDashboard [name="submit-btn"]').click(function(e){
     $.ajax({
         type: "post",
         url: 'users',
-        data: {
-                'data':postRegistrationData
-              },
+        data:postRegistrationData,
         success: function( data ){
             //data = JSON.parse( data );
-
+            console.log(data);
             if(data.hasOwnProperty("error") && data.error === true ){
                 console.log('Error');
 
@@ -43,7 +38,7 @@ $('form.verticalDashboard [name="submit-btn"]').click(function(e){
             else{
                 console.log('Success');
 
-                window.location = "/registration";
+               // window.location = "/registration";
 
 
             }

@@ -6,14 +6,14 @@ class PowerController extends \BaseController {
     {
         $result=Power::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            Power::create(Input::get());
+            Power::create(Input::json()->all());
             return Response::json(["messgae"=>'Power created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class PowerController extends \BaseController {
     {
         $result=Power::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class PowerController extends \BaseController {
         try{
             $result=Power::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'Power updated'],200);
             }

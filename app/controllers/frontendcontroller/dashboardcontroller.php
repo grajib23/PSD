@@ -3,7 +3,7 @@
 namespace frontendcontroller;
 use BaseController;
 use View;
-use PSD\PubHelpers;
+use \PubHelpers\LibraryJSON;
 
 class DashboardController extends BaseController{
   	public function login() {
@@ -11,8 +11,8 @@ class DashboardController extends BaseController{
 
     }
     public function dashboardmodule() {
-        $rankJSON = \RankController:: index();
-        $divisionJSON = \AddressController::index();
+        $rankJSON =\Response::json(\Rank::get());
+        $divisionJSON = LibraryJSON::getAddress();
       return View::make('dashboard')
       	->with('divisionJSON',$divisionJSON)
         ->with('rankJSON',$rankJSON);

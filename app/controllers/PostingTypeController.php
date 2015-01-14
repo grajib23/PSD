@@ -6,14 +6,14 @@ class PostingTypeController extends \BaseController {
     {
         $result=PostingType::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            PostingType::create(Input::get());
+            PostingType::create(Input::json()->all());
             return Response::json(["messgae"=>'PostingType created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class PostingTypeController extends \BaseController {
     {
         $result=PostingType::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class PostingTypeController extends \BaseController {
         try{
             $result=PostingType::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'PostingType updated'],200);
             }

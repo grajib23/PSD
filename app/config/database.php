@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'infsys_pub',
+			'database'  => 'pub_latest',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

@@ -6,14 +6,14 @@ class OrganizationController extends \BaseController {
     {
         $result=Organization::get();
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
     public function store()
     {
         try{
-            Organization::create(Input::get());
+            Organization::create(Input::json()->all());
             return Response::json(["messgae"=>'Organization created'],200);
         }
         catch(\Exception $e){
@@ -25,7 +25,7 @@ class OrganizationController extends \BaseController {
     {
         $result=Organization::find($id);
         if($result) {
-            return Response::json(["data" => $result], 200);
+            return Response::json($result, 200);
         }
         return Response::json(["messgae"=>'not found'],404);
     }
@@ -35,7 +35,7 @@ class OrganizationController extends \BaseController {
         try{
             $result=Organization::find($id);
             if($result){
-                $result->fill(Input::get());
+                $result->fill(Input::json()->all());
                 $result->update();
                 return Response::json(["messgae"=>'Organization updated'],200);
             }

@@ -6,7 +6,7 @@ class LanguageController extends \BaseController {
 	{
 		$result=Language::get();
 		if($result) {
-			return Response::json(["data" => $result], 200);
+			return Response::json($result, 200);
 		}
 		return Response::json(["messgae"=>'not found'],404);
 	}
@@ -14,7 +14,7 @@ class LanguageController extends \BaseController {
 	public function store()
 	{
 		try{
-			Language::create(Input::get());
+			Language::create( Input::json()->all() );
 			return Response::json(["messgae"=>'Language created'],200);
 		}
 		catch(\Exception $e){
@@ -29,7 +29,7 @@ class LanguageController extends \BaseController {
 	{
 		$result=Language::find($id);
 		if($result) {
-			return Response::json(["data" => $result], 200);
+			return Response::json( $result, 200);
 		}
 		return Response::json(["messgae"=>'not found'],404);
 
@@ -41,7 +41,7 @@ class LanguageController extends \BaseController {
 		try{
 			$result=Language::find($id);
 			if($result){
-				$result->fill(Input::get());
+				$result->fill( Input::json()->all() );
 				$result->update();
 				return Response::json(["messgae"=>'Language updated'],200);
 			}
