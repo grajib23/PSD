@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"way/generators": "~2.0"
+		"way/generators": "~2.0",
+		"fzaninotto/faker": "~1.4"
 	},
 	"require-dev": {
 		"way/generators": "~2.0"
