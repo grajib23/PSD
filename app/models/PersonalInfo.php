@@ -14,7 +14,7 @@ class PersonalInfo extends Eloquent {
     }
     public function homedistrict(){
 
-        return $this->belongsTo('District');
+        return $this->belongsTo('Upzilla');
     }
     public function cadre(){
 
