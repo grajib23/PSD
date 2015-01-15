@@ -137,6 +137,7 @@
 
                     <legend class="wizard-label"><i class="icol-accept"></i>GENERAL INFORMATION</legend>
                     <input name="posturl" value="users.personalinfos" type="hidden">
+                    <input name="posturl" value="1" name="user_id" id="user_id"type="hidden">
                     <br/>
                     <div class="mws-panel-header" style="width:95%;margin: 0px auto">
                         <span><i class="icon-table"></i>GENERAL INFORMATION</span>
@@ -144,14 +145,20 @@
                     <div id class="mws-form-row">
                         <label class="mws-form-label">E.ID</label>
                         <div class="mws-form-item">
-                            <input type="text" name="govId" id="govId"class="required large" placeholder="Type Govment ID">
+                            <input type="text" name="govt_id" id="govt_id"class="required large" placeholder="Type Govment ID">
                         </div>
                     </div>
 
                     <div class="mws-form-row">
                         <label class="mws-form-label">Name in English</label>
                         <div class="mws-form-item">
-                            <input type="text" name="nameEnglish" id="nameEnglish"class="required  large">
+                            <input type="text" name="name_in_english" id="name_in_english"class="required  large">
+                        </div>
+                    </div>
+                    <div class="mws-form-row">
+                        <label class="mws-form-label">Name in Bangla</label>
+                        <div class="mws-form-item">
+                            <input type="text" name="name_in_bangla" id="name_in_bangla"class="required  large">
                         </div>
                     </div>
                     <div class="mws-form-row">
@@ -168,7 +175,7 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Home District</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="homeDistrict" id="homeDistrict">
+                            <select class="mws-select2 small" name="homedistrict_id" id="homedistrict_id">
                                 <option value="null">Select Your District</option>
                                 <option value="1">jessore</option>
                             </select>
@@ -186,22 +193,20 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Birth Date</label>
                         <div class="mws-form-item">
-                            <input type="text" class="mws-datepicker small" name="dob" id="dob">
+                            <input type="text" class="mws-datepicker small" name="DOB" id="DOB">
                         </div>
                     </div>
+                    
                     <div class="mws-form-row">
                         <label class="mws-form-label">Rank</label>
-
                         <div class="mws-form-item">
-
-                            <select class="mws-select2 small" name="employeeRank" id="employeeRank">
-                                 <option value="lol">LOL</option>
+                            <select class="mws-select2 small" name="rank_id" id="rank_id">
+                                <option value="0">Rank 1</option>
+                                <option value="1">Rank 2</option>
                             </select>
-
                         </div>
-
                     </div>
-
+                    
                     <div class="mws-form-row">
                         <label class="mws-form-label">Posting Division</label>
                         <div class="mws-form-item">
@@ -241,11 +246,11 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Cadre</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="employeeCadre" id="employeeCadre">
-                                <option value="pos">Demo Cadre 1</option>
-                                <option value="pos">Demo Cadre 2</option>
-                                <option value="pos">Demo Cadre 3</option>
-                                <option value="pos">Demo Cadre 4</option>
+                            <select class="mws-select2 small" name="cadre_id" id="cadre_id">
+                                <option value="1">Demo Cadre 1</option>
+                                <option value="2">Demo Cadre 2</option>
+                                <option value="3">Demo Cadre 3</option>
+                                <option value="4">Demo Cadre 4</option>
                             </select>
                         </div>
                     </div>
@@ -253,15 +258,15 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Cadre date</label>
                         <div class="mws-form-item">
-                            <input type="text" class="mws-datepicker large" name="cadreDate" id="mws-calendar">
+                            <input type="text" class="mws-datepicker small" name="cadre_date" id="cadre_date">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Gender <span class="required">*</span></label>
                         <div class="mws-form-item">
                             <ul class="mws-form-list">
-                                <li><input type="radio" id="male" name="gender" class="required"/> <label for="male">Male</label></li>
-                                <li><input type="radio" id="female" name="gender"> <label for="female">Female</label></li>
+                                <li><input type="radio" id="gender" value="male"   name="gender" class="required"/> <label for="male">Male</label></li>
+                                <li><input type="radio" id="gender" value="female" name="gender"> <label for="female">Female</label></li>
                             </ul>
                             <label class="error plain" generated="true" for="gender" style="display:none"></label>
                         </div>
@@ -269,11 +274,11 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Marital status</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="marriStat" id="marriStat">
-                                <option value="pos">Married</option>
-                                <option value="pos">Single</option>
-                                <option value="pos">Divorced</option>
-                                <option value="pos">Other</option>
+                            <select class="mws-select2 small" name="marital_stat" id="marital_stat">
+                                <option value="married">Married</option>
+                                <option value="single">Single</option>
+                                <option value="divorced">Divorced</option>
+                                <option value="other">Other</option>
                             </select>
                         </div>
                     </div>
@@ -286,63 +291,58 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Father's Name in Bangla<span class="required">*</span></label>
                         <div class="mws-form-item">
-                            <input type="text" name="fName" id="fName"class="required large">
+                            <input type="text" name="fname_in_bangla" id="fname_in_bangla"class="required large">
                         </div>
                     </div>
+                    <!-- 
                     <div class="mws-form-row">
                         <label class="mws-form-label">Father's Name in English</label>
                         <div class="mws-form-item">
-                            <input type="text" name="fNameEng" id="fNameEng"class="large">
+                            <input type="text" name="name_in_english" id="name_in_english"class="large">
                         </div>
-                    </div>
+                    </div> -->
                     <div class="mws-form-row">
                         <label class="mws-form-label">Mother's Name in Bangla<span class="required">*</span></label>
                         <div class="mws-form-item">
-                            <input type="text" name="mName" id="mName"class="required large">
+                            <input type="text" name="mname_in_bangla" id="mname_in_bangla"class="required large">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Mother's Name in English</label>
                         <div class="mws-form-item">
-                            <input type="text" name="mNameEng" id="mNameEng"class="large">
+                            <input type="text" name="mname_in_english" id="mname_in_english"class="large">
                         </div>
                     </div>
 
                     <div class="mws-form-row">
                         <label class="mws-form-label">PRL Date</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="lprDate" id="lprDate">
-                                <option value="pos">1 Year</option>
-                                <option value="pos">2 Year</option>
-                                <option value="pos">3 Year</option>
-                                <option value="pos">4 Year</option>
-                                <option value="pos">5 Year</option>
-                                <option value="pos">6 Year</option>
-                            </select>
+                            <input type="text" class="mws-datepicker small" name="lpr_date" id="lpr_date">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Order/Join Date</label>
                         <div class="mws-form-item">
-                            <input type="text" class="mws-datepicker large" name="joinDate" id="joinDate">
+                            <input type="text" class="mws-datepicker small" name="join_date" id="join_date">
                         </div>
                     </div>
+                    
                     <div class="mws-form-row">
                         <label class="mws-form-label">Batch</label>
                         <div class="mws-form-item">
-                            <input type="text" name="batchDate" id="batchDate"class="large">
+                            <input type="text" name="batch" id="batch"class="large">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Confirmation G.O. Date</label>
                         <div class="mws-form-item">
-                            <input type="text" name="goDate" id="goDate"class="large">
+                            <input type="text" name="confirm_go_date" id="confirm_go_date"class="mws-datepicker small">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Religion</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="lprDate" id="lprDate">
+                            <select class="mws-select2 small" name="religion" id="religion">
                                 <option value="Muslim">MUSLIM</option>
                                 <option value="Hindu">HINDU</option>
                                 <option value="Buddhish">BUDDHIST</option>
@@ -353,32 +353,34 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Freedom Fighter</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="fFiter" id="fFiter">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                            <select class="mws-select2 small" name="is_freedom_fighter" id="is_freedom_fighter">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
                             </select>
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Child/Grand Child of Freedom Fighter</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="fFiter" id="fFiter">
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+                            <select class="mws-select2 small" name="is_child_or_grand_child_of_freedom_fighter" id="is_child_or_grand_child_of_freedom_fighter">
+                                <option value="1">Yes</option>
+                                <option value="0">No</option>
                             </select>
                         </div>
                     </div>
+                    
                     <div class="mws-form-row">
                         <label class="mws-form-label">Option for Work  Field <span class="required">*</span></label>
                         <div class="mws-form-item">
-                            <input type="text" name="workField" id="workField"class="required large">
+                            <input type="text" name="workfield_option" id="workfield_option"class="required large">
                         </div>
                     </div>
                 </fieldset>
 
                 <fieldset class="wizard-step mws-form-inline">
                     <legend class="wizard-label"><i class="icol-delivery"></i>SPOUSE INFOMATION</legend>
-                    <input name="posturl" value="url02" type="hidden">
+                    <input name="posturl" value="personalinfos.spouses" type="hidden">
+                    <input name="govt_id" value="EE7" type="hidden">
                     <br/>
                     <div class="mws-panel-header" style="width:95%;margin: 0px auto">
                         <span><i class="icon-table"></i>SPOUSE INFOMATION</span>
@@ -386,42 +388,30 @@
                     <div id class="mws-form-row">
                         <label class="mws-form-label">Name in Bangla <span class="required">*</span></label>
                         <div class="mws-form-item">
-                            <input type="text" name="snameBangla" id="snameBangla"class="required large">
+                            <input type="text" name="name_in_bangla" id="name_in_bangla"class="required large">
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Name in English</label>
                         <div class="mws-form-item">
-                            <input type="text" name="snameEnglish" id="snameEnglish"class="required  large">
+                            <input type="text" name="name_in_english" id="name_in_english"class="required  large">
                         </div>
                     </div>
-                    <div class="mws-form-row">
-                        <label class="mws-form-label">Home District</label>
-                        <div class="mws-form-item">
-                            <select class="mws-select2 small" name="shomeDistrict" id="shomeDistrict">
-                                <option value="dhk">Dhaka</option>
-                                <option value="khl">Chittagong</option>
-                                <option value="cit">Barisal</option>
-                                <option value="ran">Khulna </option>
-                                <option value="ran">Rangpur </option>
-                                <option value="ran">Sylet</option>
-                            </select>
-                        </div>
-                    </div>
+                    
                     <div class="mws-form-row">
                         <label class="mws-form-label">Occupation</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="shomeDistrict" id="shomeDistrict">
-                                <option value="dhk">Housewife</option>
-                                <option value="khl">Service</option>
-                                <option value="cit">Self Employed</option>
+                            <select class="mws-select2 small" name="occupation" id="occupation">
+                                <option value="housewife">Housewife</option>
+                                <option value="service">Service</option>
+                                <option value="selpem">Self Employed</option>
                             </select>
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Designation</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="shomeDistrict" id="shomeDistrict">
+                            <select class="mws-select2 small" name="designation" id="designation">
                                 <option value="dhk">Demo Designation</option>
                                 <option value="khl">Demo Designation</option>
                                 <option value="cit">Demo Designation</option>
@@ -433,18 +423,16 @@
                     <div class="mws-form-row">
                         <label class="mws-form-label">Home District</label>
                         <div class="mws-form-item">
-                            <select class="mws-select2 small" name="homeDistrict" id="homeDistrict">
-                                <option value="dhk">Dhaka</option>
-                                <option value="khl">Khulna</option>
-                                <option value="cit">Citagong</option>
-                                <option value="ran">Rangpur</option>
+                            <select class="mws-select2 small" name="district_id" id="district_id">
+                                <option value="null">Select Your District</option>
+                                <option value="1">jessore</option>
                             </select>
                         </div>
                     </div>
                     <div class="mws-form-row">
                         <label class="mws-form-label">Location <span class="required">*</span></label>
                         <div class="mws-form-item">
-                            <textarea name="semployeeLocation" id="semployeeLocation" rows="" cols="" class="required large"></textarea>
+                            <textarea name="location" id="location" rows="" cols="" class="required large"></textarea>
                         </div>
                     </div>
 

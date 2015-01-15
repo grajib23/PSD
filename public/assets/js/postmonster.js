@@ -42,8 +42,8 @@ $('form.verticalDashboard [name="submit-btn"]').click(function(e){
 
 
             }
-            //alert( data.message );
-            //console.log(data);
+            alert(data.messgae);
+            console.log(data);
         }
     });
 

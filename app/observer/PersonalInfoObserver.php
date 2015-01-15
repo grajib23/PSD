@@ -14,7 +14,7 @@ class PersonalInfoObserver{
                 'govt_id'		 => 'required|max:20',//|unique:personalinfo
                 'name_in_bangla' => 'required|max:100',
                 'name_in_english'=>'required|max:100',
-                'location'       => 'required',
+                //'location'       => 'required',
                 'gender'       => 'required|max:10',
                 'fname_in_bangla'  => 'required',
                 'mname_in_bangla'  => 'required',

@@ -20,7 +20,11 @@ if( $.fn.select2 ) {
 // jQuery-UI Datepicker
 if( $.fn.datepicker ) {
     $(".mws-datepicker").datepicker({
-        showOtherMonths: true
+        showOtherMonths: true,
+        onSelect: function( date, e ) {
+            var dt = date.split('/');
+            $(e.input).val(dt[2]+'-'+dt[0]+'-'+dt[1]);
+        }
     });
 
     $(".mws-datepicker-wk").datepicker({
