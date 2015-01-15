@@ -20,6 +20,7 @@ class CreatePersonalinfoTable extends Migration {
 			$table->string('name_in_bangla',100);
 			$table->string('name_in_english',100)->nullable();
 			$table->string('fname_in_bangla',100);
+			$table->string('fname_in_english',100)->nullable();
 			$table->string('mname_in_bangla',100);
 			$table->string('mname_in_english',100)->nullable();
 			$table->date('DOB')->nullable();
@@ -27,9 +28,9 @@ class CreatePersonalinfoTable extends Migration {
 			$table->date('join_date')->nullable();
 			$table->string('religion',20)->nullable();
 			$table->date('confirm_go_date')->nullable();
-			$table->date('lpr_date')->nullable();
-			$table->integer('homedistrict_id')->unsigned()->nullable();
-			$table->longtext('location');
+			$table->integer('lpr')->unsigned();
+			$table->integer('homeupzila_id')->unsigned()->nullable();
+			$table->longtext('location')->nullable();
 			$table->integer('cadre_id')->unsigned()->nullable();
 			$table->date('cadre_date')->nullable();
 			$table->integer('permanet_add_id')->unsigned()->nullable();
@@ -49,9 +50,9 @@ class CreatePersonalinfoTable extends Migration {
 						->references('id')
 							->on('users')
 								->onDelete('cascade');
-			$table->foreign('homedistrict_id')
+			$table->foreign('homeupzila_id')
 						->references('id')
-							->on('districts')
+							->on('upzilas')
 								->onDelete('cascade');
 			$table->foreign('cadre_id')
 						->references('id')
@@ -68,7 +69,7 @@ class CreatePersonalinfoTable extends Migration {
 								->onDelete('cascade');
 			$table->foreign('current_posting_id')
 						->references('id')
-							->on('postingtypes')
+							->on('upzilas')
 								->onDelete('cascade');
 			$table->foreign('rank_id')
 						->references('id')

@@ -5,7 +5,9 @@
   "name_in_english":"ABC",
   "location":"Dhaka",
   "gender":"male",
+  "fname_in_english":"fname_in_english",
   "fname_in_bangla":"fname_in_bangla",
   "mname_in_bangla":"mname_in_bangla",
+  "mname_in_english":"mname_in_english",
   "workfield_option":"workfield_option"
 }
